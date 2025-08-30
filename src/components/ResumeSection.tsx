@@ -3,14 +3,14 @@ import { Download, ExternalLink, FileText } from 'lucide-react';
 
 const ResumeSection = () => {
   const openResume = () => {
-    // This will be updated with actual resume link later
-    window.open('/resume.pdf', '_blank');
+    // Opens resume in a new browser tab
+    window.open('/Liam_Shaw_Resume.pdf', '_blank');
   };
 
   const downloadResume = () => {
-    // This will be updated with actual resume download link later
+    // Forces resume download
     const link = document.createElement('a');
-    link.href = '/resume.pdf';
+    link.href = '/Liam_Shaw_Resume.pdf';
     link.download = 'Liam_Shaw_Resume.pdf';
     link.click();
   };
@@ -63,7 +63,7 @@ const ResumeSection = () => {
             {/* Resume Preview */}
             <div className="relative">
               <iframe
-                src="/resume.pdf"
+                src="/Liam_Shaw_Resume.pdf"
                 className="w-full h-[800px] border-0"
                 title="Liam Shaw Resume"
                 loading="lazy"

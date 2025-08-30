@@ -101,11 +101,6 @@ const Footer = () => {
             <div className="flex flex-col md:flex-row items-center justify-between">
               <p className="text-sm text-muted-foreground flex items-center">
                 © {currentYear} Liam Shaw. All Rights Reserved.
-                <span className="mx-2">•</span>
-                <span className="flex items-center">
-                  Built with <Heart className="mx-1 h-4 w-4 text-red-500" fill="currentColor" /> 
-                  and modern web technologies
-                </span>
               </p>
               
               <button

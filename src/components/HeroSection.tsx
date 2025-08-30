@@ -10,8 +10,7 @@ const HeroSection = () => {
   };
 
   const openResume = () => {
-    // This will be updated with actual resume link later
-    window.open('/resume.pdf', '_blank');
+    window.open('Liam_Shaw_Resume.pdf', '_blank');
   };
 
   return (
