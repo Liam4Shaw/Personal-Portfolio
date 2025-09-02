@@ -8,7 +8,7 @@ const ProjectsSection = () => {
       year: '2024',
       description: 'Built and compared multiple ML models (Decision Tree, Random Forest, KNN, AdaBoost, XGBoost). Random Forest achieved ROC-AUC 0.98 and F1-score 0.94.',
       technologies: ['Python', 'pandas', 'scikit-learn', 'XGBoost', 'Matplotlib'],
-      github: 'https://github.com/Liam4Shaw',
+      github: 'https://github.com/Liam4Shaw/Employee-Churn-Prediction',
       demo: null,
       type: 'ml'
     },
@@ -17,7 +17,7 @@ const ProjectsSection = () => {
       year: '2024',
       description: 'Engineered features and compared Linear Regression vs Random Forest for salary prediction, with Random Forest performing best.',
       technologies: ['Python', 'pandas', 'scikit-learn', 'Matplotlib'],
-      github: 'https://github.com/Liam4Shaw',
+      github: 'https://github.com/Liam4Shaw/Employee-Salary-Prediction',
       demo: null,
       type: 'ml'
     },
@@ -26,7 +26,7 @@ const ProjectsSection = () => {
       year: '2025',
       description: 'Developed a CLI tool in Python + SQLite supporting logins, role-based access, CSV import/export, budgeting, and visualizations with Matplotlib.',
       technologies: ['Python', 'SQLite', 'Matplotlib'],
-      github: 'https://github.com/Liam4Shaw',
+      github: 'https://github.com/Liam4Shaw/expense_tracker_dbms',
       demo: null,
       type: 'software'
     },
@@ -45,12 +45,12 @@ const ProjectsSection = () => {
     {
       title: 'Tic Tac Toe',
       description: 'Classic game with AI opponent',
-      demo: '/tic-tac-toe'
+      demo: 'https://codepen.io/Liam4Shaw/full/rNGZrEb'
     },
     {
-      title: 'Flappy Bird',
-      description: 'Side-scrolling game clone',
-      demo: '/flappy-bird'
+      title: 'Block Stacker',
+      description: 'Simple block-stacking game made with HTML, CSS (SCSS), and JS (TypeScript)',
+      demo: 'https://codepen.io/Liam4Shaw/full/NWavprL'
     }
   ];
 
