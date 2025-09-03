@@ -6,7 +6,7 @@ const ExperienceSection = () => {
       role: 'Analytics & CRM Intern',
       company: 'ACEplus',
       period: 'May 2025 – Jul 2025',
-      location: 'Remote',
+      location: 'Kolkata',
       description: 'Worked with CleverTap to design consistent event tracking and improve campaign reliability. Automated data cleaning using Python (FuzzyWuzzy), improving accuracy of weekly reports. Analyzed user cohorts and showed that workshop-driven users earned ~2x points, directly shaping engagement strategy.',
       technologies: ['CleverTap', 'Python', 'FuzzyWuzzy', 'Data Analysis']
     },
