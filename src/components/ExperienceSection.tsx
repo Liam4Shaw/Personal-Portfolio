@@ -8,7 +8,7 @@ const ExperienceSection = () => {
       period: 'May 2025 – Jul 2025',
       location: 'Kolkata',
       description: 'Worked with CleverTap to design consistent event tracking and improve campaign reliability. Automated data cleaning using Python (FuzzyWuzzy), improving accuracy of weekly reports. Analyzed user cohorts and showed that workshop-driven users earned ~2x points, directly shaping engagement strategy.',
-      technologies: ['CleverTap', 'Python', 'FuzzyWuzzy', 'Data Analysis']
+      technologies: ['CleverTap', 'Python', 'FuzzyWuzzy', 'Data Analysis', 'Jira']
     },
     {
       role: 'Software Intern',
@@ -16,7 +16,7 @@ const ExperienceSection = () => {
       period: 'Oct 2024 – Jan 2025',
       location: 'Remote',
       description: 'Built a Dockerized URL shortener with Spring Boot and PostgreSQL. Integrated REST APIs with a frontend and eliminated environment inconsistencies through Docker. Contributed to production-ready code with Maven builds and authentication.',
-      technologies: ['Spring Boot', 'PostgreSQL', 'Docker', 'Maven', 'REST APIs']
+      technologies: ['Java', 'Spring Boot', 'PostgreSQL', 'Docker', 'Maven', 'REST APIs']
     },
     {
       role: 'Software Tester & Developer Intern',
@@ -24,7 +24,7 @@ const ExperienceSection = () => {
       period: 'May 2024 – Jul 2024',
       location: 'Remote',
       description: 'Developed CRUD microservices using Flask & Jinja, achieving 90%+ unit test coverage. Found and fixed 30+ bugs in a Bubble.io demo app, while improving team workflows with Git branching and PR reviews.',
-      technologies: ['Flask', 'Jinja', 'Bubble.io', 'Git', 'Unit Testing']
+      technologies: ['Python', 'Flask', 'Jinja', 'Bubble.io', 'Git', 'Unit Testing']
     }
   ];
 
