@@ -8,7 +8,7 @@ export const meta = {
   location: "Kolkata, India",
   github: "https://github.com/Liam4Shaw",
   website: "https://liamshaw.in",
-  resumeUrl: "/Liam_Shaw_Resume_OnePage.pdf",
+  resumeUrl: "/Liam_Shaw_Resume.pdf",
 }
 
 export type Tag =

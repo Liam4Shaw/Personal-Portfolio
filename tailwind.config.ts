@@ -19,15 +19,15 @@ const config: Config = {
         "canvas-2": "#111113",
         "canvas-3": "#18181b",
         // Borders
-        border:    "rgba(255,255,255,0.07)",
-        "border-hi": "rgba(255,255,255,0.14)",
+        border:    "rgba(255,255,255,0.09)",
+        "border-hi": "rgba(255,255,255,0.17)",
         // Surfaces (subtle fills)
-        surface:   "rgba(255,255,255,0.035)",
-        "surface-2": "rgba(255,255,255,0.06)",
+        surface:   "rgba(255,255,255,0.04)",
+        "surface-2": "rgba(255,255,255,0.07)",
         // Text hierarchy
         ink:  "#f0eeeb",
-        "ink-2": "#8f8d8a",
-        "ink-3": "#4a4845",
+        "ink-2": "#9e9c99",
+        "ink-3": "#56534f",
         // Accent — warm amber, single deliberate pop of colour
         accent: "#e8c468",
         "accent-dim": "#c9a84c",

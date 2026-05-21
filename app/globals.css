@@ -51,11 +51,11 @@
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.10);
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(232, 196, 104, 0.28);
+  background: rgba(232, 196, 104, 0.32);
 }
 
 /* ── Focus ────────────────────────────────────────────────────────────────── */
@@ -74,24 +74,55 @@ body.panel-open { overflow: hidden; }
   .text-pretty  { text-wrap: pretty; }
 
   /* Hairline borders */
-  .border-hairline { border-color: rgba(255,255,255,0.07); }
+  .border-hairline { border-color: rgba(255,255,255,0.09); }
 
   /* Prose rhythm */
   .prose-rhythm > * + * { margin-top: 1.4em; }
 
-  /* Clamp helpers */
-  .text-display-xl { font-size: clamp(44px, 7vw, 88px); }
-  .text-display-lg { font-size: clamp(32px, 4.5vw, 56px); }
-  .text-display-md { font-size: clamp(24px, 3vw, 38px); }
+  /* Display type — fluid clamp */
+  .text-display-xl { font-size: clamp(40px, 7vw, 88px); }
+  .text-display-lg { font-size: clamp(30px, 4.5vw, 56px); }
+  .text-display-md { font-size: clamp(22px, 3vw, 38px); }
 }
 
 /* ── Horizontal rule style ────────────────────────────────────────────────── */
 hr {
   border: none;
-  border-top: 1px solid rgba(255,255,255,0.07);
+  border-top: 1px solid rgba(255,255,255,0.09);
 }
 
 /* ── Image rendering ──────────────────────────────────────────────────────── */
 img {
   image-rendering: -webkit-optimize-contrast;
+}
+
+/* ── Mobile panel — full-width on small screens ───────────────────────────── */
+@media (max-width: 640px) {
+  /* Case study panel takes full width */
+  aside[aria-label^="Case study"] {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  /* Ensure panel content body has comfortable horizontal padding */
+  aside[aria-label^="Case study"] .px-8 {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  /* Mobile metrics — wrap gracefully */
+  aside[aria-label^="Case study"] .grid-cols-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* Screenshot — ensure it fills container without overflow */
+  figure img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* ── Section separator refinement ─────────────────────────────────────────── */
+section + section {
+  border-top: 1px solid rgba(255,255,255,0.05);
 }

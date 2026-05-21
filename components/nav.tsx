@@ -71,9 +71,9 @@ export default function Nav() {
                 key={l.href}
                 href={l.href}
                 className={cn(
-                  "font-sans text-[13px] font-medium transition-colors",
+                  "font-sans text-[13px] font-medium transition-colors relative",
                   active === l.href.slice(1)
-                    ? "text-ink"
+                    ? "text-accent"
                     : "text-ink-3 hover:text-ink-2"
                 )}
               >

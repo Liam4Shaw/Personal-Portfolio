@@ -7,20 +7,20 @@ export default function About() {
     <section id="about" className="py-24 md:py-32">
       <div className="max-w-content mx-auto px-6">
         <FadeIn className="mb-14">
-          <SectionLabel>01 / About</SectionLabel>
+          <SectionLabel>02 / About</SectionLabel>
           <h2 className="font-display text-display-lg text-ink leading-tight tracking-tight">
             How I think about building
           </h2>
         </FadeIn>
 
-        <div className="grid md:grid-cols-[1fr_320px] gap-14 md:gap-20 items-start">
+        <div className="grid md:grid-cols-[1fr_280px] gap-14 md:gap-20 items-start">
 
           {/* Left — prose */}
-          <FadeIn delay={0.06} className="space-y-6 text-[15.5px] text-ink-2 leading-loose">
+          <FadeIn delay={0.06} className="space-y-5 text-[15.5px] text-ink-2 leading-loose">
             <p>
               I&apos;m a final-year Computer Science student at{" "}
-              <span className="text-ink font-medium">FLAME University, Pune</span>{" "}
-              (Minor: Business Analytics, Full Academic Scholarship). My work sits at
+              <span className="text-ink font-medium">FLAME University, Pune</span>
+              {" "}(Minor: Business Analytics, Full Academic Scholarship). My work sits at
               the intersection of applied ML, NLP, and software engineering — with a
               consistent focus on outcomes over elegance.
             </p>
@@ -32,8 +32,7 @@ export default function About() {
               at sub-second resolution. The most interesting result wasn&apos;t the
               CCC scores — it was that the learned fusion gates independently
               recovered a known music-psychology finding purely from gradient
-              descent, without any explicit supervision. That&apos;s the kind of
-              result that earns trust.
+              descent. That&apos;s the kind of result that earns trust.
             </p>
 
             <p>
@@ -55,7 +54,7 @@ export default function About() {
             </p>
 
             {/* Availability callout */}
-            <div className="inline-flex items-center gap-2.5 border border-border rounded-sm px-4 py-2.5 bg-surface">
+            <div className="inline-flex items-center gap-2.5 border border-border rounded-sm px-4 py-2.5 bg-surface mt-1">
               <span className="w-1.5 h-1.5 rounded-full bg-green flex-shrink-0 animate-pulse" />
               <span className="font-mono text-[11.5px] text-ink-2">
                 Available for internships + full-time · May 2026 onwards
@@ -93,16 +92,16 @@ export default function About() {
               </FadeIn>
             ))}
 
-            {/* Mobile headshot — shown below content on small screens */}
+            {/* Mobile headshot */}
             <FadeIn delay={0.24} className="md:hidden mt-4">
               <div className="flex items-center gap-4 pt-2">
-                <div className="w-16 h-20 relative overflow-hidden rounded-sm border border-border flex-shrink-0">
+                <div className="w-[60px] h-[72px] relative overflow-hidden rounded-sm border border-border flex-shrink-0">
                   <Image
                     src="/headshot.png"
                     alt="Liam Shaw"
                     fill
                     className="object-cover object-top grayscale"
-                    sizes="64px"
+                    sizes="60px"
                   />
                 </div>
                 <div>

@@ -32,7 +32,7 @@ export default function Contact() {
               <a
                 href={`mailto:${meta.email}`}
                 id="contact-email-cta"
-                className="inline-flex items-center gap-2 text-[13.5px] font-medium text-canvas bg-ink hover:bg-ink/90 px-5 py-2.5 rounded-sm transition-colors"
+                className="inline-flex items-center gap-2 text-[13.5px] font-medium text-canvas bg-accent hover:bg-accent-dim px-5 py-2.5 rounded-sm transition-colors"
               >
                 <Mail size={13} />
                 Send an email

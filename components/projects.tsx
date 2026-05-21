@@ -33,7 +33,7 @@ function FeaturedRow({
         id={`project-${p.id}`}
         className={cn(
           "group relative flex flex-col gap-5 py-7 border-b border-border cursor-pointer",
-          "hover:bg-surface/40 transition-colors duration-200 -mx-4 px-4 rounded-sm"
+          "hover:bg-white/[0.018] transition-colors duration-200 -mx-4 px-4 rounded-sm"
         )}
       >
         {/* Top row — index + title + thumbnail */}
@@ -125,7 +125,7 @@ function SecondaryRow({
         id={`project-${p.id}`}
         className={cn(
           "group flex items-start gap-4 py-5 border-b border-border cursor-pointer",
-          "hover:bg-surface/40 transition-colors duration-200 -mx-4 px-4 rounded-sm"
+          "hover:bg-white/[0.018] transition-colors duration-200 -mx-4 px-4 rounded-sm"
         )}
       >
         <ProjectIndex n={index} />
@@ -178,9 +178,9 @@ export default function Projects() {
     <section id="projects" className="py-24 md:py-32 bg-canvas-2">
       <div className="max-w-content mx-auto px-6">
         <FadeIn className="mb-12">
-          <SectionLabel>02 / Work</SectionLabel>
+          <SectionLabel>01 / Work</SectionLabel>
           <h2 className="font-display text-display-lg text-ink leading-tight tracking-tight mb-3">
-            Engineering case studies
+            Selected work
           </h2>
           <p className="text-[15px] text-ink-2 max-w-[480px] leading-relaxed">
             Research that shipped. Products in active use. Click any row to open the full case study.

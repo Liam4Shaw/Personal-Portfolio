@@ -40,11 +40,11 @@ function CaseSection({
   return (
     <div className="py-7 border-b border-border last:border-0">
       <div className="flex items-baseline gap-3 mb-3">
-        <span className="font-mono text-[10px] text-ink-3/50 w-6 flex-shrink-0">{num}</span>
+        <span className="font-mono text-[10px] text-ink-3/40 w-6 flex-shrink-0">{num}</span>
         <h3 className="font-mono text-[10.5px] text-ink-3 tracking-widest uppercase">{label}</h3>
       </div>
       <div className="pl-9">
-        <p className="text-[14.5px] text-ink-2 leading-loose">{content}</p>
+        <p className="text-[14.5px] md:text-[15px] text-ink-2 leading-loose">{content}</p>
         {shots.map(shot => (
           <Screenshot
             key={shot.src}
@@ -118,7 +118,7 @@ export default function ProjectPanel({
             aria-label={`Case study: ${project.title}`}
           >
             {/* Header bar */}
-            <div className="flex items-center justify-between px-8 py-5 border-b border-border flex-shrink-0">
+            <div className="flex items-center justify-between px-5 md:px-8 py-4 md:py-5 border-b border-border flex-shrink-0">
               <div className="flex items-center gap-4">
                 <span className="font-mono text-[10px] text-ink-3 tracking-widest uppercase">
                   Case study
@@ -136,6 +136,26 @@ export default function ProjectPanel({
                   esc
                 </span>
               </button>
+            </div>
+
+            {/* Mobile horizontal section strip */}
+            <div className="lg:hidden flex-shrink-0 border-b border-border overflow-x-auto">
+              <nav className="flex px-5 gap-1 py-2" aria-label="Case study sections mobile">
+                {caseSections.map(({ key, label }) => (
+                  <button
+                    key={key}
+                    onClick={() => scrollToSection(key)}
+                    className={cn(
+                      "flex-shrink-0 font-mono text-[10px] px-3 py-1.5 rounded-sm transition-colors whitespace-nowrap",
+                      activeSection === key
+                        ? "text-accent bg-accent/8 border border-accent/20"
+                        : "text-ink-3 hover:text-ink-2 border border-transparent"
+                    )}
+                  >
+                    {label}
+                  </button>
+                ))}
+              </nav>
             </div>
 
             {/* Two-column body */}
@@ -214,7 +234,7 @@ export default function ProjectPanel({
                         className={cn(
                           "flex items-center gap-2 text-left px-2 py-1.5 rounded-sm transition-colors text-[11.5px]",
                           activeSection === key
-                            ? "text-ink bg-surface"
+                            ? "text-accent bg-accent/6 border-l border-accent/40 -ml-px pl-[calc(0.5rem-1px)]"
                             : "text-ink-3 hover:text-ink-2 hover:bg-surface/50"
                         )}
                       >
@@ -228,7 +248,7 @@ export default function ProjectPanel({
 
               {/* Right — scrollable case study body */}
               <div className="flex-1 overflow-y-auto">
-                <div className="px-8 md:px-10 py-8 pb-20">
+                <div className="px-5 md:px-10 py-8 pb-20">
 
                   {/* Mobile: title block */}
                   <div className="lg:hidden mb-7">

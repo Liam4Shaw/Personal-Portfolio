@@ -33,7 +33,7 @@ export default function Hero() {
             <motion.div {...f(0.05)} className="mb-8 flex items-center gap-2">
               <span className="inline-block w-1.5 h-1.5 rounded-full bg-green animate-pulse" />
               <span className="font-mono text-[11px] text-ink-3 tracking-wide">
-                Open to opportunities · May 2026
+                Available · May 2026
               </span>
             </motion.div>
 
@@ -47,7 +47,7 @@ export default function Hero() {
               </p>
             </motion.div>
 
-            {/* Core proposition — specific, concrete */}
+            {/* Core proposition — specific, grounded */}
             <motion.div {...f(0.2)} className="mb-10">
               <p className="text-[19px] md:text-[21px] text-ink/80 leading-relaxed font-light tracking-tight max-w-[520px]">
                 I build systems that help people{" "}
@@ -65,7 +65,7 @@ export default function Hero() {
               <a
                 href="#projects"
                 id="hero-cta-work"
-                className="inline-flex items-center gap-2 text-[13.5px] font-medium text-canvas bg-ink hover:bg-ink/90 px-5 py-2.5 rounded-sm transition-colors"
+                className="inline-flex items-center gap-2 text-[13.5px] font-medium text-canvas bg-accent hover:bg-accent-dim px-5 py-2.5 rounded-sm transition-colors"
               >
                 View work
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
@@ -101,14 +101,14 @@ export default function Hero() {
             className="hidden md:block flex-shrink-0"
           >
             <div className="relative">
-              {/* Subtle frame */}
-              <div className="w-[148px] h-[178px] relative overflow-hidden rounded-sm border border-border/50">
+              {/* Frame */}
+              <div className="w-[198px] h-[242px] relative overflow-hidden rounded-sm border border-border/50">
                 <Image
                   src="/headshot.png"
                   alt="Liam Shaw"
                   fill
                   className="object-cover object-top grayscale hover:grayscale-0 transition-all duration-700"
-                  sizes="148px"
+                  sizes="198px"
                   priority
                 />
               </div>
