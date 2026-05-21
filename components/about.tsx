@@ -1,19 +1,22 @@
 "use client"
 import Image from "next/image"
 import { FadeIn, SectionLabel } from "./ui"
+import { skillGroups, education, certifications } from "@/lib/data"
 
 export default function About() {
   return (
     <section id="about" className="py-24 md:py-32">
       <div className="max-w-content mx-auto px-6">
+
+        {/* ── How I think about building ─────────────────────────────── */}
         <FadeIn className="mb-14">
-          <SectionLabel>02 / About</SectionLabel>
+          <SectionLabel>03 / About</SectionLabel>
           <h2 className="font-display text-display-lg text-ink leading-tight tracking-tight">
             How I think about building
           </h2>
         </FadeIn>
 
-        <div className="grid md:grid-cols-[1fr_280px] gap-14 md:gap-20 items-start">
+        <div className="grid md:grid-cols-[1fr_280px] gap-14 md:gap-20 items-start mb-20 md:mb-28">
 
           {/* Left — prose */}
           <FadeIn delay={0.06} className="space-y-5 text-[15.5px] text-ink-2 leading-loose">
@@ -113,6 +116,75 @@ export default function About() {
             </FadeIn>
           </div>
         </div>
+
+        {/* ── Education ──────────────────────────────────────────────── */}
+        <FadeIn className="mb-10">
+          <p className="font-mono text-[10.5px] tracking-widest uppercase text-ink-3 mb-3">Education</p>
+          <div className="space-y-3">
+            {education.map((e, i) => (
+              <FadeIn key={e.institution} delay={i * 0.07}>
+                <div className="flex gap-5 md:gap-8 items-start border border-border rounded-card p-5 md:p-6 bg-canvas-2 hover:border-border-hi transition-all duration-200">
+                  <div className="flex-shrink-0 pt-0.5 w-16 md:w-20">
+                    <span className="font-mono text-[10px] text-ink-3">{e.period}</span>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-[15px] font-semibold text-ink leading-snug mb-0.5">
+                      {e.degree}
+                    </h3>
+                    <p className="text-[13.5px] text-accent mb-3">{e.institution}</p>
+                    <ul className="space-y-1">
+                      {e.highlights.map(h => (
+                        <li key={h} className="flex items-start gap-2.5 text-[13px] text-ink-3">
+                          <span className="font-mono text-border-hi mt-[3px] flex-shrink-0">—</span>
+                          {h}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </FadeIn>
+
+        {/* Certifications */}
+        <FadeIn className="mb-20 md:mb-28">
+          <p className="font-mono text-[10.5px] text-ink-3 tracking-widest uppercase mb-4">
+            Certifications
+          </p>
+          <div className="grid sm:grid-cols-3 gap-3">
+            {certifications.map((c, i) => (
+              <FadeIn key={c.name} delay={i * 0.05}>
+                <div className="border border-border rounded-card p-4 bg-canvas hover:border-border-hi transition-all duration-200">
+                  <p className="text-[13px] font-medium text-ink leading-snug mb-1">{c.name}</p>
+                  <p className="font-mono text-[10px] text-ink-3">
+                    {c.issuer} · {c.year}
+                  </p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </FadeIn>
+
+        {/* ── Technical Skills ───────────────────────────────────────── */}
+        <FadeIn className="mb-4">
+          <p className="font-mono text-[10.5px] tracking-widest uppercase text-ink-3 mb-8">Technical range</p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-10">
+            {skillGroups.map((group, i) => (
+              <FadeIn key={group.label} delay={i * 0.04}>
+                <div>
+                  <p className="font-mono text-[9.5px] text-ink-3 tracking-widest uppercase mb-3 pb-2 border-b border-border">
+                    {group.label}
+                  </p>
+                  <p className="text-[13.5px] text-ink-2 leading-relaxed">
+                    {group.skills.join(", ")}
+                  </p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </FadeIn>
+
       </div>
     </section>
   )

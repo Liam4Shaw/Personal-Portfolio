@@ -1,6 +1,69 @@
 "use client"
-import { FadeIn, SectionLabel, Highlight } from "./ui"
+import { FadeIn, SectionLabel } from "./ui"
 import { experiences } from "@/lib/data"
+
+// Key phrases to highlight in amber per experience entry
+const amberPhrases: Record<string, string[]> = {
+  aceplus: [
+    "~2× more in-app ACEs",
+    "formally adopted by the engineering team",
+    "reprioritise school engagement programmes",
+    "~15%",
+  ],
+  mandrake: [
+    "removed environment-parity issues",
+    "full request lifecycle",
+  ],
+  willwali: [
+    "inaugural intern cohort",
+    "90%+ test coverage",
+    "30+ bugs",
+  ],
+  "flame-sports": [
+    "18.91M total views",
+    "6.57M accounts reached",
+    "79,100+ followers",
+    "98.2% non-follower view share",
+  ],
+}
+
+function highlightBullet(text: string, id: string): React.ReactNode {
+  const phrases = amberPhrases[id] || []
+  if (phrases.length === 0) return text
+
+  const parts: React.ReactNode[] = []
+  let remaining = text
+
+  while (remaining.length > 0) {
+    let earliestIndex = -1
+    let earliestPhrase = ""
+
+    for (const phrase of phrases) {
+      const idx = remaining.indexOf(phrase)
+      if (idx !== -1 && (earliestIndex === -1 || idx < earliestIndex)) {
+        earliestIndex = idx
+        earliestPhrase = phrase
+      }
+    }
+
+    if (earliestIndex === -1) {
+      parts.push(remaining)
+      break
+    }
+
+    if (earliestIndex > 0) {
+      parts.push(remaining.slice(0, earliestIndex))
+    }
+    parts.push(
+      <span key={earliestIndex} className="text-accent font-medium">
+        {earliestPhrase}
+      </span>
+    )
+    remaining = remaining.slice(earliestIndex + earliestPhrase.length)
+  }
+
+  return <>{parts}</>
+}
 
 function CompanyInitials({ company }: { company: string }) {
   const initials = company
@@ -21,7 +84,7 @@ export default function Experience() {
     <section id="experience" className="py-24 md:py-32 bg-canvas-2">
       <div className="max-w-content mx-auto px-6">
         <FadeIn className="mb-14">
-          <SectionLabel>03 / Experience</SectionLabel>
+          <SectionLabel>02 / Experience</SectionLabel>
           <h2 className="font-display text-display-lg text-ink leading-tight tracking-tight">
             Where I&apos;ve worked
           </h2>
@@ -52,15 +115,12 @@ export default function Experience() {
                     </span>
                   </div>
 
-                  {/* Highlight */}
-                  {exp.highlight && <Highlight text={exp.highlight} />}
-
                   {/* Bullets */}
                   <ul className="mt-3.5 space-y-2">
                     {exp.bullets.map((b, j) => (
                       <li key={j} className="flex gap-3 text-[13.5px] text-ink-3 leading-relaxed">
                         <span className="text-border-hi text-[11px] mt-[3px] flex-shrink-0 font-mono">—</span>
-                        <span>{b}</span>
+                        <span>{highlightBullet(b, exp.id)}</span>
                       </li>
                     ))}
                   </ul>

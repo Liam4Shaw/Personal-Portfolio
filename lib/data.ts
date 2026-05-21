@@ -297,7 +297,6 @@ export const experiences: Experience[] = [
     period: "May – Jul 2025",
     location: "Derek O'Brien & Associates · Kolkata · Hybrid",
     type: "internship",
-    highlight: "Workshop cohort earned ~2× more in-app ACEs than organic installs",
     bullets: [
       "Designed Zone_Module_Action naming convention; audited 50+ inconsistent CleverTap event keys; authored 50+ event spec + 3-phase migration plan — formally adopted by the engineering team.",
       "Cohort analysis revealed workshop-driven users earned ~2× more in-app ACEs than organic signups — adopted by the product team to reprioritise school engagement programmes.",
@@ -326,10 +325,9 @@ export const experiences: Experience[] = [
     period: "May – Jul 2024",
     location: "Remote · Kuala Lumpur",
     type: "internship",
-    highlight: "90%+ test coverage · 30+ bugs identified in live product",
     bullets: [
       "Part of the inaugural intern cohort at an early-stage Malaysian legal-tech startup automating will-writing across multiple legal jurisdictions.",
-      "Flask/Jinja CRUD microservices; 50+ unit and end-to-end tests at 90%+ coverage (unittest + pytest); identified and documented 30+ bugs in the Bubble will-creation MVP.",
+      "Flask/Jinja CRUD microservices; 90%+ test coverage (unittest + pytest); identified and documented 30+ bugs in the Bubble will-creation MVP.",
       "Validated automated will outputs against Hindu Succession Act, Islamic Faraid distribution, and Malaysian inheritance law edge cases.",
       "Established team Git workflows, PEP 8 standards, docstrings, function annotations, and README documentation.",
     ],
@@ -342,11 +340,11 @@ export const experiences: Experience[] = [
     period: "2025 – 2026",
     location: "FLAME University, Pune",
     type: "analytics",
-    highlight: "18.91M total views · 6.57M accounts reached",
     bullets: [
       "Consolidated club activity and media performance datasets across multiple sports verticals from disparate reporting sources.",
       "Derived comparative insights across clubs, time periods, and audience segments — including a Football Club breakout with 98.2% non-follower view share identified as an organic reach anomaly.",
-      "Produced final analytical reports: 18.91M total views, 6.57M accounts reached, 79,100+ followers gained, 72.4% non-follower view share.",
+      "18.91M total views · 6.57M accounts reached · 79,100+ followers gained · 72.4% non-follower view share.",
+      "Produced final analytical reports surfacing performance trends and benchmarks across all sport verticals.",
     ],
     tags: ["Data Analysis", "Reporting", "Insight Generation", "Excel"],
   },

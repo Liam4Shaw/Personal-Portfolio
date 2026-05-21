@@ -10,7 +10,7 @@ export default function Contact() {
 
         {/* Top — section label + heading */}
         <FadeIn className="mb-14">
-          <SectionLabel>06 / Contact</SectionLabel>
+          <SectionLabel>04 / Contact</SectionLabel>
           <h2 className="font-display text-display-lg text-ink leading-tight tracking-tight max-w-[560px]">
             Let&apos;s build something{" "}
             <span className="italic text-ink/60">worth building.</span>

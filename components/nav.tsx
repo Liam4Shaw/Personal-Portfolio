@@ -5,8 +5,8 @@ import { meta } from "@/lib/data"
 
 const links = [
   { label: "Work",       href: "#projects" },
-  { label: "About",      href: "#about" },
   { label: "Experience", href: "#experience" },
+  { label: "About",      href: "#about" },
   { label: "Contact",    href: "#contact" },
 ]
 
