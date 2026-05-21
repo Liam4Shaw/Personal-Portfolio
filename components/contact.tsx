@@ -30,7 +30,9 @@ export default function Contact() {
 
             <div className="flex flex-wrap gap-3">
               <a
-                href={`mailto:${meta.email}`}
+                href={`https://mail.google.com/mail/?view=cm&to=${meta.email}`}
+                target="_blank"
+                rel="noopener noreferrer"
                 id="contact-email-cta"
                 className="inline-flex items-center gap-2 text-[13.5px] font-medium text-canvas bg-accent hover:bg-accent-dim px-5 py-2.5 rounded-sm transition-colors"
               >
@@ -52,7 +54,7 @@ export default function Contact() {
           <FadeIn delay={0.14}>
             <div className="flex flex-col gap-4">
               {[
-                { icon: <Mail size={13} />, label: "Email", value: meta.email, href: `mailto:${meta.email}` },
+                { icon: <Mail size={13} />, label: "Email", value: meta.email, href: `https://mail.google.com/mail/?view=cm&to=${meta.email}`, external: true },
                 { icon: <Github size={13} />, label: "GitHub", value: "github.com/Liam4Shaw", href: meta.github, external: true },
                 { icon: <Phone size={13} />, label: "Phone", value: meta.phone, href: `tel:${meta.phone.replace(/\s/g, "")}` },
                 { icon: <MapPin size={13} />, label: "Location", value: meta.location, href: null },

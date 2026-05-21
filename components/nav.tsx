@@ -96,7 +96,7 @@ export default function Nav() {
               </svg>
             </a>
             <a
-              href={`mailto:${meta.email}`}
+              href="#contact"
               className="font-sans text-[12.5px] font-medium text-canvas bg-ink hover:bg-ink/90 px-3.5 py-1.5 rounded-sm transition-colors"
             >
               Get in touch
@@ -154,7 +154,7 @@ export default function Nav() {
           </nav>
           <div className="flex flex-col gap-3 px-6 pt-8">
             <a
-              href={`mailto:${meta.email}`}
+              href="#contact"
               onClick={() => setMobile(false)}
               className="w-full flex items-center justify-center text-[14px] font-medium text-canvas bg-ink rounded-sm py-3"
             >
