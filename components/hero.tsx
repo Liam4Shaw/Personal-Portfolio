@@ -102,20 +102,16 @@ export default function Hero() {
           >
             <div className="relative">
               {/* Frame */}
-              <div className="w-[198px] h-[242px] relative overflow-hidden rounded-sm border border-border/50">
+              <div className="w-[218px] h-[266px] relative overflow-hidden rounded-sm border border-border/50">
                 <Image
                   src="/headshot.png"
                   alt="Liam Shaw"
                   fill
                   className="object-cover object-top grayscale hover:grayscale-0 transition-all duration-700"
-                  sizes="198px"
+                  sizes="218px"
                   priority
                 />
               </div>
-              {/* Small label below */}
-              <p className="mt-2.5 font-mono text-[9.5px] text-ink-3 tracking-widest text-center uppercase">
-                Liam Shaw
-              </p>
             </div>
           </motion.div>
 
