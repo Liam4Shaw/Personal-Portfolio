@@ -386,8 +386,6 @@ export const education: Education[] = [
     period: "2022 – 2026",
     highlights: [
       "Full Academic Scholarship",
-      "Graduation Project: MoodTrack — Multimodal & Multilingual Music Emotion Analysis",
-      "Supervisor: Prof. Manoranjan Dash, School of Computing and Data Sciences",
     ],
   },
   {
