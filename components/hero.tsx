@@ -102,13 +102,13 @@ export default function Hero() {
           >
             <div className="relative">
               {/* Frame */}
-              <div className="w-[218px] h-[266px] relative overflow-hidden rounded-sm border border-border/50">
+              <div className="w-[240px] h-[293px] relative overflow-hidden rounded-sm border border-border/50">
                 <Image
                   src="/headshot.png"
                   alt="Liam Shaw"
                   fill
                   className="object-cover object-top grayscale hover:grayscale-0 transition-all duration-700"
-                  sizes="218px"
+                  sizes="240px"
                   priority
                 />
               </div>
