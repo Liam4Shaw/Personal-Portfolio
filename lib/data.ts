@@ -2,7 +2,7 @@ export const meta = {
   name: "Liam Shaw",
   title: "Applied AI · Analytics · Software",
   description:
-    "Final-year CS + Business Analytics student at FLAME University. I build applied AI systems, analytics workflows, and software end-to-end — and care as much about business impact and practical execution as about the engineering.",
+    "CS + Business Analytics graduate from FLAME University, 2026. I build applied AI systems, analytics workflows, and software end-to-end — and care as much about business impact and practical execution as about the engineering.",
   email: "liamshaw421@gmail.com",
   phone: "+91 93303 77645",
   location: "Kolkata, India",
@@ -327,7 +327,7 @@ export const experiences: Experience[] = [
     type: "internship",
     bullets: [
       "Part of the inaugural intern cohort at an early-stage Malaysian legal-tech startup automating will-writing across multiple legal jurisdictions.",
-      "Flask/Jinja CRUD microservices; 90%+ test coverage (unittest + pytest); identified and documented 30+ bugs in the Bubble will-creation MVP.",
+      "Flask/Jinja CRUD microservices; wrote 50+ unit and end-to-end tests at 90%+ coverage; identified and documented 30+ bugs in the Bubble will-creation MVP.",
       "Validated automated will outputs against Hindu Succession Act, Islamic Faraid distribution, and Malaysian inheritance law edge cases.",
       "Established team Git workflows, PEP 8 standards, docstrings, function annotations, and README documentation.",
     ],
@@ -341,10 +341,11 @@ export const experiences: Experience[] = [
     location: "FLAME University, Pune",
     type: "analytics",
     bullets: [
-      "Consolidated club activity and media performance datasets across multiple sports verticals from disparate reporting sources.",
+      "Consolidated club activity and media performance datasets across FLAME's sports clubs from disparate reporting sources.",
       "Derived comparative insights across clubs, time periods, and audience segments — including a Football Club breakout with 98.2% non-follower view share identified as an organic reach anomaly.",
       "18.91M total views · 6.57M accounts reached · 79,100+ followers gained · 72.4% non-follower view share.",
       "Produced final analytical reports surfacing performance trends and benchmarks across all sport verticals.",
+      "Work published in the FLAME Sports Annual Report 2025–26.",
     ],
     tags: ["Data Analysis", "Reporting", "Insight Generation", "Excel"],
   },

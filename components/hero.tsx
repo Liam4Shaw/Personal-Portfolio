@@ -39,12 +39,9 @@ export default function Hero() {
 
             {/* Name */}
             <motion.div {...f(0.1)} className="mb-6">
-              <h1 className="font-display text-display-xl text-ink leading-none tracking-tightest mb-2">
+              <h1 className="font-display text-display-xl text-ink leading-none tracking-tightest">
                 Liam Shaw
               </h1>
-              <p className="font-mono text-[12px] text-ink-3 tracking-widest uppercase">
-                Applied AI · Analytics · Software
-              </p>
             </motion.div>
 
             {/* Core proposition — specific, grounded */}
@@ -57,6 +54,9 @@ export default function Hero() {
                 Audio-to-emotion models, AI scouting platforms, engagement
                 analytics for universities — the common thread is turning
                 messy data into something a person can act on.
+              </p>
+              <p className="mt-5 font-mono text-[11px] text-ink-3 tracking-widest uppercase">
+                Applied AI · Analytics · Software
               </p>
             </motion.div>
 

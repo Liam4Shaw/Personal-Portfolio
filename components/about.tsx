@@ -21,46 +21,28 @@ export default function About() {
           {/* Left — prose */}
           <FadeIn delay={0.06} className="space-y-5 text-[15.5px] text-ink-2 leading-loose">
             <p>
-              I&apos;m a final-year Computer Science student at{" "}
-              <span className="text-ink font-medium">FLAME University, Pune</span>
-              {" "}(Minor: Business Analytics, Full Academic Scholarship). My work sits at
-              the intersection of applied ML, NLP, and software engineering — with a
-              consistent focus on outcomes over elegance.
+              I&apos;m a recent{" "}
+              <span className="text-ink font-medium">CS + Business Analytics graduate from FLAME University</span>
+              {" "}and I&apos;m genuinely excited about what happens when you put the right tool in front of the right problem.
             </p>
 
             <p>
-              My graduation project,{" "}
-              <span className="text-ink font-medium">MoodTrack</span>, is a
-              multimodal music emotion system that models audio and lyrics jointly
-              at sub-second resolution. The most interesting result wasn&apos;t the
-              CCC scores — it was that the learned fusion gates independently
-              recovered a known music-psychology finding purely from gradient
-              descent. That&apos;s the kind of result that earns trust.
+              I&apos;ve spent the last few years building things — ML research systems, analytics pipelines, client dashboards, internship projects — and the part that keeps pulling me forward isn&apos;t the technology itself. It&apos;s the moment when something opaque becomes clear: a cohort analysis that shifts a product decision, a dashboard that turns hours of Excel work into seconds, a model that surfaces a pattern nobody had formalised before.
             </p>
 
             <p>
-              At{" "}
-              <span className="text-ink font-medium">ACEplus</span>, I designed
-              the analytics event framework for a product reaching 5,000+ schools,
-              ran cohort analyses that directly shifted product strategy, and built
-              a data-cleaning pipeline from scratch. At{" "}
-              <span className="text-ink font-medium">FLAME&apos;s CDL</span>, I
-              replaced an hours-long manual Excel workflow with a deployed
-              client-side dashboard in weeks — by choosing the right constraint
-              early.
+              I use AI the way I use any other tool — to get to that moment faster and more reliably. I&apos;m comfortable in the research layer when that&apos;s what the problem needs, and equally comfortable in the analytics or product layer when that&apos;s what actually moves things forward.
             </p>
 
             <p>
-              I&apos;m drawn to roles where both technical rigour and practical
-              judgment matter: AI engineering, product analytics, CRM/ops tech,
-              and full-stack software.
+              What matters most to me is whether the problem is real and whether the work moves something forward.
             </p>
 
             {/* Availability callout */}
             <div className="inline-flex items-center gap-2.5 border border-border rounded-sm px-4 py-2.5 bg-surface mt-1">
               <span className="w-1.5 h-1.5 rounded-full bg-green flex-shrink-0 animate-pulse" />
               <span className="font-mono text-[11.5px] text-ink-2">
-                Available for internships + full-time · May 2026 onwards
+                Available for full-time roles and select project work
               </span>
             </div>
           </FadeIn>
@@ -82,7 +64,7 @@ export default function About() {
               },
               {
                 label: "Generalist with depth",
-                body: "I move across NLP research, backend engineering, CRM analytics, and client work. The common thread: understand the problem clearly, pick the right tool, execute cleanly.",
+                body: "I move across NLP research, backend engineering, CRM analytics, and client work. The common thread isn't the stack — it's understanding the problem well enough to know what actually needs to be built.",
               },
             ].map((card, i) => (
               <FadeIn key={card.label} delay={0.08 + i * 0.05}>

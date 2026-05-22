@@ -26,7 +26,7 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: `${meta.name} — Applied AI, Analytics & Software`,
+  title: meta.name,
   description: meta.description,
   metadataBase: new URL("https://liamshaw.in"),
   openGraph: {

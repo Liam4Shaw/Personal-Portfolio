@@ -16,7 +16,6 @@ const amberPhrases: Record<string, string[]> = {
   ],
   willwali: [
     "inaugural intern cohort",
-    "90%+ test coverage",
     "30+ bugs",
   ],
   "flame-sports": [
@@ -27,8 +26,20 @@ const amberPhrases: Record<string, string[]> = {
   ],
 }
 
+// Key phrases to bold per experience entry
+const boldPhrases: Record<string, string[]> = {
+  willwali: [
+    "50+ unit and end-to-end tests at 90%+ coverage",
+  ],
+}
+
 function highlightBullet(text: string, id: string): React.ReactNode {
-  const phrases = amberPhrases[id] || []
+  const amber = amberPhrases[id] || []
+  const bold  = boldPhrases[id]  || []
+  const phrases = [
+    ...amber.map(p => ({ phrase: p, type: "amber" as const })),
+    ...bold.map(p  => ({ phrase: p, type: "bold"  as const })),
+  ]
   if (phrases.length === 0) return text
 
   const parts: React.ReactNode[] = []
@@ -37,12 +48,14 @@ function highlightBullet(text: string, id: string): React.ReactNode {
   while (remaining.length > 0) {
     let earliestIndex = -1
     let earliestPhrase = ""
+    let earliestType: "amber" | "bold" = "amber"
 
-    for (const phrase of phrases) {
+    for (const { phrase, type } of phrases) {
       const idx = remaining.indexOf(phrase)
       if (idx !== -1 && (earliestIndex === -1 || idx < earliestIndex)) {
         earliestIndex = idx
         earliestPhrase = phrase
+        earliestType = type
       }
     }
 
@@ -54,11 +67,19 @@ function highlightBullet(text: string, id: string): React.ReactNode {
     if (earliestIndex > 0) {
       parts.push(remaining.slice(0, earliestIndex))
     }
-    parts.push(
-      <span key={earliestIndex} className="text-accent font-medium">
-        {earliestPhrase}
-      </span>
-    )
+    if (earliestType === "amber") {
+      parts.push(
+        <span key={earliestIndex} className="text-accent font-medium">
+          {earliestPhrase}
+        </span>
+      )
+    } else {
+      parts.push(
+        <strong key={earliestIndex} className="text-ink-2 font-semibold">
+          {earliestPhrase}
+        </strong>
+      )
+    }
     remaining = remaining.slice(earliestIndex + earliestPhrase.length)
   }
 

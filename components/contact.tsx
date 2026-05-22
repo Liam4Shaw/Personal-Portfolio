@@ -12,8 +12,8 @@ export default function Contact() {
         <FadeIn className="mb-14">
           <SectionLabel>04 / Contact</SectionLabel>
           <h2 className="font-display text-display-lg text-ink leading-tight tracking-tight max-w-[560px]">
-            Let&apos;s build something{" "}
-            <span className="italic text-ink/60">worth building.</span>
+            If you&apos;re working on something real,{" "}
+            <span className="italic text-ink/60">let&apos;s talk.</span>
           </h2>
         </FadeIn>
 
