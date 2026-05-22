@@ -298,10 +298,11 @@ export const experiences: Experience[] = [
     location: "Derek O'Brien & Associates · Kolkata · Hybrid",
     type: "internship",
     bullets: [
+      "Developed, configured and tested automated retention and re-engagement journeys/campaigns (push, in-app, email, WhatsApp) using CleverTap.",
       "Designed Zone_Module_Action naming convention; audited 50+ inconsistent CleverTap event keys; authored 50+ event spec + 3-phase migration plan — formally adopted by the engineering team.",
       "Cohort analysis revealed workshop-driven users earned ~2× more in-app ACEs than organic signups — adopted by the product team to reprioritise school engagement programmes.",
       "Python + FuzzyWuzzy batch script resolved ~15% of inconsistent school-name profile fields, improving segmentation for school-specific campaigns and coach reports.",
-      "Configured and tested CleverTap retention/re-engagement journeys (push, in-app, email, WhatsApp); validated offline event-caching and new feature integrations via Jira.",
+      "Validated offline event-caching and new feature integrations via Jira tickets.",
     ],
     tags: ["CleverTap", "Python", "Cohort Analysis", "CRM", "Jira", "FuzzyWuzzy"],
   },

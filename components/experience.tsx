@@ -5,6 +5,7 @@ import { experiences } from "@/lib/data"
 // Key phrases to highlight in amber per experience entry
 const amberPhrases: Record<string, string[]> = {
   aceplus: [
+    "automated retention and re-engagement journeys/campaigns",
     "~2× more in-app ACEs",
     "formally adopted by the engineering team",
     "reprioritise school engagement programmes",
@@ -19,10 +20,8 @@ const amberPhrases: Record<string, string[]> = {
     "30+ bugs",
   ],
   "flame-sports": [
-    "18.91M total views",
-    "6.57M accounts reached",
-    "79,100+ followers",
-    "98.2% non-follower view share",
+    "Derived comparative insights across clubs, time periods, and audience segments",
+    "Produced final analytical reports",
   ],
 }
 
