@@ -22,10 +22,10 @@ export default function Contact() {
           {/* Left — copy + primary CTA */}
           <FadeIn delay={0.08} className="max-w-[480px]">
             <p className="text-[15.5px] text-ink-2 leading-loose mb-8">
-              I&apos;m actively looking for internships and full-time roles in AI
+              I&apos;m actively looking for work and full-time roles in AI
               engineering, analytics, data products, CRM/ops tech, and software.
               If you&apos;re working on something interesting — or you just want to
-              talk about a project — reach out.
+              talk about a project — please do reach out!
             </p>
 
             <div className="flex flex-wrap gap-3">
