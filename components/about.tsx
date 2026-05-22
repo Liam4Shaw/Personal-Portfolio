@@ -23,7 +23,7 @@ export default function About() {
             <p>
               I&apos;m a recent{" "}
               <span className="text-ink font-medium">CS + Business Analytics graduate from FLAME University</span>
-              {" "}and I&apos;m genuinely excited about what happens when you put the right tool in front of the right problem.
+              , and I&apos;m genuinely excited to work with people and businesses to solve real problems, build strong systems, and overall create value — and keep doing that as I learn and grow.
             </p>
 
             <p>
@@ -58,7 +58,7 @@ export default function About() {
               },
               {
                 label: "Data as a decision tool",
-                body: "CS + Business Analytics background means I always ask: what decision does this data change? The 2× cohort finding at ACEplus mattered because it shifted product strategy — not because it was statistically interesting.",
+                body: "CS + Business Analytics background means I treat data as an input to decisions, not an output to report. The 2× cohort finding at ACEplus mattered because it influenced product strategy — not because it was statistically interesting.",
               },
               {
                 label: "Constraints as design input",
