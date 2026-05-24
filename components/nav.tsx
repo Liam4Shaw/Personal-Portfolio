@@ -13,7 +13,7 @@ const links = [
 export default function Nav() {
   const [scrolled, setScrolled]   = useState(false)
   const [mobileOpen, setMobile]   = useState(false)
-  const [active, setActive]       = useState("")
+  const [active, setActive]       = useState("hero")
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24)
@@ -30,9 +30,9 @@ export default function Nav() {
     return () => { document.body.style.overflow = "" }
   }, [mobileOpen])
 
-  // Intersection observer for active section
+  // Intersection observer for active section (includes hero so we know when we're at the top)
   useEffect(() => {
-    const ids = links.map(l => l.href.slice(1))
+    const ids = ["hero", ...links.map(l => l.href.slice(1))]
     const obs = new IntersectionObserver(
       entries => entries.forEach(e => { if (e.isIntersecting) setActive(e.target.id) }),
       { rootMargin: "-40% 0px -55% 0px" }
@@ -58,7 +58,12 @@ export default function Nav() {
           {/* Wordmark */}
           <a
             href="#"
-            className="font-display text-[17px] text-ink hover:text-ink/80 transition-colors leading-none"
+            className={cn(
+              "font-display text-[17px] transition-colors leading-none",
+              active === "hero"
+                ? "text-accent"
+                : "text-ink hover:text-ink/80"
+            )}
             aria-label="Liam Shaw — home"
           >
             Liam Shaw
