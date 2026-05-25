@@ -156,9 +156,9 @@ export default function Projects() {
   // Priority order from spec
   const priorityOrder = [
     "moodtrack",
+    "moodle-dashboard",
     "scoutai",
     "fakenews",
-    "moodle-dashboard",
     "multimodal-mer",
   ]
 

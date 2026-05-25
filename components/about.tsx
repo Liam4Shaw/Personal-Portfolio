@@ -43,7 +43,7 @@ export default function About() {
               <div className="inline-flex items-center gap-2.5 border border-border rounded-sm px-4 py-2.5 bg-surface mt-1 hover:border-border-hi transition-colors cursor-pointer">
                 <span className="w-1.5 h-1.5 rounded-full bg-green flex-shrink-0 animate-pulse" />
                 <span className="font-mono text-[11.5px] text-ink-2">
-                  Available for full-time roles and select project work
+                  Available for full-time roles, internships, &amp; select project work
                 </span>
               </div>
             </a>
