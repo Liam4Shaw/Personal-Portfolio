@@ -32,81 +32,72 @@ function FeaturedRow({
         onClick={onOpen}
         id={`project-${p.id}`}
         className={cn(
-          "group relative flex flex-col gap-5 py-7 border-b border-border cursor-pointer",
+          "group relative py-7 border-b border-border cursor-pointer",
           "hover:bg-white/[0.018] transition-colors duration-200 -mx-4 px-4 rounded-sm"
         )}
       >
-        {/* Top row — index + title + thumbnail */}
-        <div className="flex items-start gap-4">
-          <ProjectIndex n={index} />
-
-          <div className="flex-1 min-w-0">
-            <div className="flex items-start justify-between gap-4">
-              <div>
-                <h3 className="font-display text-[22px] md:text-[26px] text-ink leading-tight tracking-tight group-hover:text-accent transition-colors duration-200">
-                  {p.title}
-                </h3>
-                <p className="font-mono text-[10.5px] text-ink-3 mt-0.5 tracking-wide">
-                  {p.subtitle}
-                </p>
-              </div>
-
-              {/* Thumbnail — only for projects that have a listImage */}
-              {p.listImage && (
-                <div className="hidden sm:block flex-shrink-0 w-[90px] h-[58px] overflow-hidden rounded-sm border border-border bg-canvas-2 group-hover:border-border-hi transition-colors">
-                  <Image
-                    src={p.listImage}
-                    alt={`${p.title} preview`}
-                    width={180}
-                    height={116}
-                    className="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-500"
-                  />
-                </div>
-              )}
-            </div>
+        {/* Single flex row: [index] [content] [thumbnail] */}
+        <div className="flex items-center gap-6">
+          {/* Index — top-aligned */}
+          <div className="self-start pt-1">
+            <ProjectIndex n={index} />
           </div>
-        </div>
 
-        {/* Middle — summary + meta */}
-        <div className="flex items-start gap-4 pl-12">
-          <div className="flex-1">
-            <p className="text-[14px] text-ink-2 leading-relaxed max-w-[560px]">
+          {/* Text content — fills available width */}
+          <div className="flex-1 min-w-0 self-start">
+            <h3 className="font-display text-[22px] md:text-[26px] text-ink leading-tight tracking-tight group-hover:text-accent transition-colors duration-200">
+              {p.title}
+            </h3>
+            <p className="font-mono text-[10.5px] text-ink-3 mt-0.5 tracking-wide">
+              {p.subtitle}
+            </p>
+
+            <p className="mt-4 text-[14px] text-ink-2 leading-relaxed">
               {p.summary}
             </p>
 
             <div className="mt-4 flex flex-wrap items-center gap-3">
-              {/* Tags */}
               <div className="flex flex-wrap gap-1.5">
                 {p.tags.map(t => <TagPill key={t} tag={t} sm />)}
               </div>
-
-              {/* Period */}
               <span className="font-mono text-[10px] text-ink-3">{p.period}</span>
-
-              {/* 2 key metrics */}
               <div className="flex gap-4 ml-2">
                 {p.metrics.slice(0, 2).map(m => (
-                  <div key={m.label} className="flex items-baseline gap-1.5">
+                  <div key={m.label || m.value} className="flex items-baseline gap-1.5">
                     <span className="font-mono text-[13px] text-ink font-medium">{m.value}</span>
                     <span className="font-mono text-[9.5px] text-ink-3">{m.label}</span>
                   </div>
                 ))}
               </div>
             </div>
+
+            {/* CTA */}
+            <div className="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-150 flex items-center gap-1 text-[12px] font-medium text-accent">
+              Case study
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                <path d="M2 6H10M10 6L7 3M10 6L7 9" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </div>
           </div>
 
-          {/* CTA arrow */}
-          <div className="flex-shrink-0 mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-150 flex items-center gap-1 text-[12px] font-medium text-accent">
-            Case study
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-              <path d="M2 6H10M10 6L7 3M10 6L7 9" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </div>
+          {/* Thumbnail — grayscale by default, colour on hover */}
+          {p.listImage && (
+            <div className="hidden sm:block flex-shrink-0 self-center w-[280px] h-[178px] overflow-hidden rounded-sm border border-border bg-canvas-2 group-hover:border-border-hi transition-colors">
+              <Image
+                src={p.listImage}
+                alt={`${p.title} preview`}
+                width={560}
+                height={356}
+                className="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-500"
+              />
+            </div>
+          )}
         </div>
       </article>
     </FadeIn>
   )
 }
+
 
 // Secondary project row (lighter treatment)
 function SecondaryRow({

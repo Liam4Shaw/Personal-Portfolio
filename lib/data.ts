@@ -128,7 +128,41 @@ export const projects: Project[] = [
     demoUrl: "#",
     githubUrl: "#",
     featured: true,
-    // No screenshots yet — placeholder will render
+    listImage: "/screenshots/scoutai-dashboard.png",
+    screenshots: {
+      images: [
+        {
+          src: "/screenshots/scoutai-dashboard.png",
+          caption: "Dashboard overview — platform stats, 59,290 players, 48,877 fixtures, 18 leagues, and database coverage summary",
+          placement: "results",
+        },
+        {
+          src: "/screenshots/scoutai-pca-map.png",
+          caption: "PCA Player Map — 40,817 players projected to 2D space, coloured by ML-derived archetype (12 clusters, 37.9% + 19.3% variance explained)",
+          placement: "architecture",
+        },
+        {
+          src: "/screenshots/scoutai-query-sql.png",
+          caption: "NL2SQL Query interface — natural language input, generated SQL, AI insight, and results table for 'top 10 highest-rated midfielders under 25 in La Liga'",
+          placement: "approach",
+        },
+        {
+          src: "/screenshots/scoutai-scout-page.png",
+          caption: "Scout page — NL query to structured player search with AI-narrated insight and ranked player cards",
+          placement: "challenges",
+        },
+        {
+          src: "/screenshots/scoutai-analytics.png",
+          caption: "ML Analytics — RAG-powered insight, feature importance (Random Forest), and archetype defining traits per cluster",
+          placement: "insight",
+        },
+        {
+          src: "/screenshots/scoutai-compare.png",
+          caption: "Multi-Player Comparison — overlapping radar polygon chart across 2–5 players (Ronaldo, Ramos, Iniesta, Modrić shown)",
+          placement: "differently",
+        },
+      ],
+    },
     detail: {
       problem:
         "Football analysts need to ask intuitive questions over enormous relational databases: 'find me a left-footed midfielder aged under 23 with high pressing intensity.' Translating that intent into correct, safe SQL and surfacing the result as a readable insight requires technical skill most scouts don't have — and is slow even for those who do.",
@@ -188,8 +222,8 @@ export const projects: Project[] = [
     summary:
       "Deployed analytics dashboard for FLAME University's Centre for Digital Learning. Replaced a manual Excel-based workflow — CSV export, manual scoring, spreadsheet flagging — with a seconds-to-insight web application tracking pre-orientation student engagement.",
     role: "Solo Developer — client engagement, product design, engineering",
-    period: "2024 – 2025",
-    tags: ["Analytics", "Full-Stack", "Product Analytics"],
+    period: "2025",
+    tags: ["Full-Stack", "Product Analytics"],
     metrics: [
       { value: "Deployed", label: "Active production use" },
       { value: "Hours → s", label: "Workflow time reduction" },
