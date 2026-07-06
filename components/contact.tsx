@@ -13,7 +13,7 @@ export default function Contact() {
           <SectionLabel>04 / Contact</SectionLabel>
           <h2 className="font-display text-display-lg text-ink leading-tight tracking-tight max-w-[560px]">
             If you&apos;re working on something real,{" "}
-            <span className="italic text-ink/60">let&apos;s talk.</span>
+            <span className="italic text-accent">let&apos;s talk.</span>
           </h2>
         </FadeIn>
 
@@ -21,15 +21,10 @@ export default function Contact() {
 
           {/* Left — copy + primary CTA */}
           <FadeIn delay={0.08} className="max-w-[480px]">
-            <p className="text-[15.5px] text-ink-2 leading-loose mb-4">
+            <p className="text-[15.5px] text-ink-2 leading-loose mb-8">
               I take on select consulting, freelance, and web application
               projects — currently alongside a full-time role at Kisah. If
-              there&apos;s a real problem you&apos;re trying to solve, let&apos;s talk.
-            </p>
-
-            <p className="text-[13px] text-ink-3 leading-relaxed mb-8">
-              Based in Kolkata, working full-time at Kisah — outside work is
-              handled remotely, with realistic (not instant) turnaround.
+              there&apos;s a real problem you&apos;re trying to solve, let&apos;s figure it out.
             </p>
 
             <div className="flex flex-wrap gap-3">

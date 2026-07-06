@@ -48,7 +48,7 @@ function FeaturedCard({
 
         <div className="flex-1 flex flex-col p-5 md:p-6">
           <div className="flex items-start justify-between gap-3 mb-1">
-            <h3 className="font-display text-[20px] md:text-[22px] text-ink leading-tight tracking-tight">
+            <h3 className="font-display text-[20px] md:text-[22px] text-ink leading-tight tracking-tight group-hover:text-accent transition-colors">
               {p.title}
             </h3>
             <span className="font-mono text-[10px] text-ink-3 pt-1.5 flex-shrink-0">{p.period}</span>
@@ -101,7 +101,7 @@ function SecondaryRow({
         <div className="flex-1 min-w-0">
           <div className="flex items-start justify-between gap-4">
             <div>
-              <h3 className="font-display text-[17px] text-ink/80 leading-tight group-hover:text-ink transition-colors">
+              <h3 className="font-display text-[17px] text-ink/80 leading-tight group-hover:text-accent transition-colors">
                 {p.title}
               </h3>
               <p className="font-mono text-[10px] text-ink-3 mt-0.5">{p.subtitle}</p>

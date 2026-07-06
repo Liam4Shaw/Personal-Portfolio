@@ -60,7 +60,7 @@ function highlightBullet(text: string, id: string): React.ReactNode {
       parts.push(remaining.slice(0, earliestIndex))
     }
     parts.push(
-      <strong key={earliestIndex} className="text-ink font-semibold">
+      <strong key={earliestIndex} className="text-ink font-semibold group-hover:text-accent transition-colors">
         {earliestPhrase}
       </strong>
     )
@@ -107,7 +107,7 @@ export default function Experience() {
                   {/* Header */}
                   <div className="flex flex-wrap items-start justify-between gap-x-4 gap-y-1 mb-1">
                     <div>
-                      <h3 className="text-[15px] font-semibold text-ink leading-snug">
+                      <h3 className="text-[15px] font-semibold text-ink leading-snug group-hover:text-accent transition-colors">
                         {exp.role}
                       </h3>
                       <p className="text-[13px] text-ink-2 font-medium mt-0.5">

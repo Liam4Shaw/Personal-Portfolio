@@ -45,7 +45,7 @@ export default function About() {
             {/* Availability callout */}
             <a href="#contact" className="inline-flex">
               <div className="inline-flex items-center gap-2.5 border border-border rounded-sm px-4 py-2.5 bg-surface mt-1 hover:border-border-hi transition-colors cursor-pointer">
-                <span className="w-1.5 h-1.5 rounded-full bg-ink-3 flex-shrink-0 animate-pulse" />
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 flex-shrink-0 animate-pulse" />
                 <span className="font-mono text-[11.5px] text-ink-2">
                   Open to select consulting, freelance &amp; project work
                 </span>
@@ -75,7 +75,7 @@ export default function About() {
             ].map((card, i) => (
               <FadeIn key={card.label} delay={0.08 + i * 0.05}>
                 <div className="group border-l-[1.5px] border-border pl-4 hover:border-border-hi transition-colors duration-200">
-                  <h3 className="text-[13px] font-semibold text-ink mb-1 transition-colors">
+                  <h3 className="text-[13px] font-semibold text-ink mb-1 group-hover:text-accent transition-colors">
                     {card.label}
                   </h3>
                   <p className="text-[13px] text-ink-3 leading-relaxed">{card.body}</p>
@@ -114,12 +114,12 @@ export default function About() {
           <div className="space-y-3">
             {education.map((e, i) => (
               <FadeIn key={e.institution} delay={i * 0.07}>
-                <div className="flex gap-5 md:gap-8 items-start border border-border rounded-card p-5 md:p-6 bg-canvas-2 hover:border-border-hi transition-all duration-200">
+                <div className="group flex gap-5 md:gap-8 items-start border border-border rounded-card p-5 md:p-6 bg-canvas-2 hover:border-border-hi transition-all duration-200">
                   <div className="flex-shrink-0 pt-0.5 w-16 md:w-20">
                     <span className="font-mono text-[10px] text-ink-3">{e.period}</span>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-[15px] font-semibold text-ink leading-snug mb-0.5">
+                    <h3 className="text-[15px] font-semibold text-ink leading-snug mb-0.5 group-hover:text-accent transition-colors">
                       {e.degree}
                     </h3>
                     <p className="text-[13.5px] text-ink-2 font-medium mb-3">{e.institution}</p>
