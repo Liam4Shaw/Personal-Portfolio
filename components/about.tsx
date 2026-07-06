@@ -25,13 +25,13 @@ export default function About() {
           {/* Left — prose */}
           <FadeIn delay={0.06} className="space-y-5 text-[15.5px] text-ink-2 leading-loose">
             <p>
-              I&apos;m a recent{" "}
-              <span className="text-ink font-medium">CS + Business Analytics graduate from FLAME University</span>
-              , and I&apos;m genuinely excited to work with people and businesses to solve real problems, build strong systems, and overall create value — and keep doing that as I learn and grow.
+              I&apos;m an{" "}
+              <span className="text-ink font-medium">IT consultant and builder</span>
+              {" "}— right now that means running production automation and analytics work at Kisah, alongside select consulting and freelance projects. I came out of FLAME University in 2026 with a CS + Business Analytics degree, but at this point that&apos;s the foundation, not the headline — the actual story is building systems that make a business run better.
             </p>
 
             <p>
-              I&apos;ve spent the last few years building things — ML research systems, analytics pipelines, client dashboards, internship projects — and the part that keeps pulling me forward isn&apos;t the technology itself. It&apos;s the moment when something opaque becomes clear: a cohort analysis that shifts a product decision, a dashboard that turns hours of Excel work into seconds, a model that surfaces a pattern nobody had formalised before.
+              I&apos;ve spent the last few years building things — ML research systems, production analytics pipelines, client dashboards, and now full consulting engagements — and the part that keeps pulling me forward isn&apos;t the technology itself. It&apos;s the moment when something opaque becomes clear: a cohort analysis that shifts a product decision, a dashboard that turns hours of Excel work into seconds, a model that surfaces a pattern nobody had formalised before.
             </p>
 
             <p>
@@ -47,7 +47,7 @@ export default function About() {
               <div className="inline-flex items-center gap-2.5 border border-border rounded-sm px-4 py-2.5 bg-surface mt-1 hover:border-border-hi transition-colors cursor-pointer">
                 <span className="w-1.5 h-1.5 rounded-full bg-ink-3 flex-shrink-0 animate-pulse" />
                 <span className="font-mono text-[11.5px] text-ink-2">
-                  Available for full-time roles, internships, &amp; select project work
+                  Open to select consulting, freelance &amp; project work
                 </span>
               </div>
             </a>
@@ -57,20 +57,20 @@ export default function About() {
           <div className="space-y-4">
             {[
               {
-                label: "Research that ships",
-                body: "Every AI project I build ends with a running application. MoodTrack is a Flask web app. ScoutAI is a full-stack platform. Results tables alone don't tell you whether a system is useful.",
+                label: "Systems that ship",
+                body: "The Kisah pipeline runs daily on its own — scraping, transforming, and feeding a live Power BI dashboard without me touching it. MoodTrack and ScoutAI carry the same instinct into research: a Flask app and a full-stack platform, not a results table sitting in a notebook. If it doesn't run on its own, it doesn't count.",
               },
               {
                 label: "Data as a decision tool",
-                body: "CS + Business Analytics background means I treat data as an input to decisions, not an output to report. The 2× cohort finding at ACEplus mattered because it influenced product strategy — not because it was statistically interesting.",
+                body: "CS + Business Analytics means I treat data as an input to decisions, not an output to report. The 2× cohort finding at ACEplus mattered because it changed product strategy — the ranking dashboards I build at Kisah run on the same logic today.",
               },
               {
                 label: "Constraints as design input",
-                body: "The client-side Moodle dashboard shipped in weeks because building local-first removed IT approval and privacy objections in one move. The right constraint often makes the project possible.",
+                body: "The client-side Moodle dashboard shipped in weeks because building local-first removed IT approval and privacy objections in one move.",
               },
               {
                 label: "Generalist with depth",
-                body: "I move across NLP research, backend engineering, CRM analytics, and client work. The common thread isn't the stack — it's understanding the problem well enough to know what actually needs to be built.",
+                body: "I move across NLP research, backend engineering, workflow automation, and client consulting. The common thread isn't the stack — it's understanding the problem well enough to know what actually needs to be built.",
               },
             ].map((card, i) => (
               <FadeIn key={card.label} delay={0.08 + i * 0.05}>

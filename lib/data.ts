@@ -413,11 +413,15 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     label: "Frameworks & Infrastructure",
-    skills: ["FastAPI", "Flask", "Spring Boot", "React", "Docker", "Node.js", "SQLAlchemy"],
+    skills: ["FastAPI", "Flask", "Spring Boot", "React", "Next.js", "Docker", "Node.js", "SQLAlchemy"],
   },
   {
     label: "Analytics & CRM",
-    skills: ["CleverTap", "Cohort Analysis", "Funnel Analysis", "pandas", "NumPy", "Matplotlib", "FuzzyWuzzy", "Excel"],
+    skills: ["CleverTap", "Cohort Analysis", "Funnel Analysis", "pandas", "NumPy", "Matplotlib", "FuzzyWuzzy", "Excel", "Power BI", "DAX"],
+  },
+  {
+    label: "Automation & Scraping",
+    skills: ["Selenium", "undetected-chromedriver", "GitHub Actions", "Google Sheets API (gspread)"],
   },
   {
     label: "Tools & Platforms",

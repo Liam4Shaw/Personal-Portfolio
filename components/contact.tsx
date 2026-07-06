@@ -21,11 +21,15 @@ export default function Contact() {
 
           {/* Left — copy + primary CTA */}
           <FadeIn delay={0.08} className="max-w-[480px]">
-            <p className="text-[15.5px] text-ink-2 leading-loose mb-8">
-              I&apos;m actively looking for work and full-time roles in AI
-              engineering, analytics, data products, CRM/ops tech, and software.
-              If you&apos;re working on something interesting — or you just want to
-              talk about a project — please do reach out!
+            <p className="text-[15.5px] text-ink-2 leading-loose mb-4">
+              I take on select consulting, freelance, and web application
+              projects — currently alongside a full-time role at Kisah. If
+              there&apos;s a real problem you&apos;re trying to solve, let&apos;s talk.
+            </p>
+
+            <p className="text-[13px] text-ink-3 leading-relaxed mb-8">
+              Based in Kolkata, working full-time at Kisah — outside work is
+              handled remotely, with realistic (not instant) turnaround.
             </p>
 
             <div className="flex flex-wrap gap-3">
