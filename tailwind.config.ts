@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss"
 
 const config: Config = {
+  darkMode: "class",
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -14,25 +15,26 @@ const config: Config = {
         mono: ["var(--font-mono)", "ui-monospace", "monospace"],
       },
       colors: {
-        // Background layers — near-neutral dark (not blue-black)
-        canvas:   "#0a0a0b",
-        "canvas-2": "#111113",
-        "canvas-3": "#18181b",
+        // Background layers — theme-adaptive via CSS variables (see globals.css)
+        canvas:   "var(--color-canvas)",
+        "canvas-2": "var(--color-canvas-2)",
+        "canvas-3": "var(--color-canvas-3)",
         // Borders
-        border:    "rgba(255,255,255,0.09)",
-        "border-hi": "rgba(255,255,255,0.17)",
+        border:    "var(--color-border)",
+        "border-hi": "var(--color-border-hi)",
         // Surfaces (subtle fills)
-        surface:   "rgba(255,255,255,0.04)",
-        "surface-2": "rgba(255,255,255,0.07)",
+        surface:   "var(--color-surface)",
+        "surface-2": "var(--color-surface-2)",
         // Text hierarchy
-        ink:  "#f0eeeb",
-        "ink-2": "#9e9c99",
-        "ink-3": "#56534f",
-        // Accent — warm amber, single deliberate pop of colour
-        accent: "#e8c468",
-        "accent-dim": "#c9a84c",
-        // Status
-        green: "#4ade80",
+        ink:  "var(--color-ink)",
+        "ink-2": "var(--color-ink-2)",
+        "ink-3": "var(--color-ink-3)",
+        // Accent — single restrained amber. Same value in both themes (brand identity,
+        // not a neutral) — used ONLY for the primary CTA fill and the "currently" status dot.
+        accent: "var(--color-accent)",
+        "accent-dim": "var(--color-accent-dim)",
+        // Fixed dark text for content sitting on an accent-filled surface (buttons)
+        "on-accent": "var(--color-on-accent)",
       },
       maxWidth: { content: "1100px" },
       keyframes: {

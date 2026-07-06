@@ -1,9 +1,13 @@
 "use client"
 import Image from "next/image"
 import { FadeIn, SectionLabel } from "./ui"
-import { skillGroups, education, certifications } from "@/lib/data"
+import { skillGroups, education } from "@/lib/data"
+import { useTheme } from "./theme-provider"
+import { cn } from "@/lib/utils"
 
 export default function About() {
+  const { theme } = useTheme()
+
   return (
     <section id="about" className="py-24 md:py-32">
       <div className="max-w-content mx-auto px-6">
@@ -41,7 +45,7 @@ export default function About() {
             {/* Availability callout */}
             <a href="#contact" className="inline-flex">
               <div className="inline-flex items-center gap-2.5 border border-border rounded-sm px-4 py-2.5 bg-surface mt-1 hover:border-border-hi transition-colors cursor-pointer">
-                <span className="w-1.5 h-1.5 rounded-full bg-green flex-shrink-0 animate-pulse" />
+                <span className="w-1.5 h-1.5 rounded-full bg-ink-3 flex-shrink-0 animate-pulse" />
                 <span className="font-mono text-[11.5px] text-ink-2">
                   Available for full-time roles, internships, &amp; select project work
                 </span>
@@ -70,8 +74,8 @@ export default function About() {
               },
             ].map((card, i) => (
               <FadeIn key={card.label} delay={0.08 + i * 0.05}>
-                <div className="group border-l-[1.5px] border-border pl-4 hover:border-accent/50 transition-colors duration-200">
-                  <h3 className="text-[13px] font-semibold text-ink mb-1 group-hover:text-accent/90 transition-colors">
+                <div className="group border-l-[1.5px] border-border pl-4 hover:border-border-hi transition-colors duration-200">
+                  <h3 className="text-[13px] font-semibold text-ink mb-1 transition-colors">
                     {card.label}
                   </h3>
                   <p className="text-[13px] text-ink-3 leading-relaxed">{card.body}</p>
@@ -87,7 +91,10 @@ export default function About() {
                     src="/headshot.png"
                     alt="Liam Shaw"
                     fill
-                    className="object-cover object-top grayscale"
+                    className={cn(
+                      "object-cover object-top transition-all duration-700",
+                      theme === "dark" ? "grayscale hover:grayscale-0" : "grayscale-0 hover:grayscale"
+                    )}
                     sizes="60px"
                   />
                 </div>
@@ -115,7 +122,7 @@ export default function About() {
                     <h3 className="text-[15px] font-semibold text-ink leading-snug mb-0.5">
                       {e.degree}
                     </h3>
-                    <p className="text-[13.5px] text-accent mb-3">{e.institution}</p>
+                    <p className="text-[13.5px] text-ink-2 font-medium mb-3">{e.institution}</p>
                     <ul className="space-y-1">
                       {e.highlights.map(h => (
                         <li key={h} className="flex items-start gap-2.5 text-[13px] text-ink-3">
@@ -131,27 +138,8 @@ export default function About() {
           </div>
         </FadeIn>
 
-        {/* Certifications */}
-        <FadeIn className="mb-20 md:mb-28">
-          <p className="font-mono text-[10.5px] text-ink-3 tracking-widest uppercase mb-4">
-            Certifications
-          </p>
-          <div className="grid sm:grid-cols-3 gap-3">
-            {certifications.map((c, i) => (
-              <FadeIn key={c.name} delay={i * 0.05}>
-                <div className="border border-border rounded-card p-4 bg-canvas hover:border-border-hi transition-all duration-200">
-                  <p className="text-[13px] font-medium text-ink leading-snug mb-1">{c.name}</p>
-                  <p className="font-mono text-[10px] text-ink-3">
-                    {c.issuer} · {c.year}
-                  </p>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-        </FadeIn>
-
         {/* ── Technical Skills ───────────────────────────────────────── */}
-        <FadeIn className="mb-4">
+        <FadeIn className="mb-4 mt-10 md:mt-14">
           <p className="font-mono text-[10.5px] tracking-widest uppercase text-ink-3 mb-8">Technical range</p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-10">
             {skillGroups.map((group, i) => (

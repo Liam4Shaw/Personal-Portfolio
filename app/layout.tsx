@@ -2,6 +2,19 @@ import type { Metadata } from "next"
 import { Inter, JetBrains_Mono, Instrument_Serif } from "next/font/google"
 import "./globals.css"
 import { meta } from "@/lib/data"
+import { ThemeProvider } from "@/components/theme-provider"
+
+const themeInitScript = `
+(function () {
+  try {
+    var stored = localStorage.getItem("theme");
+    var theme = stored === "light" || stored === "dark"
+      ? stored
+      : (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+    document.documentElement.classList.toggle("dark", theme === "dark");
+  } catch (e) {}
+})();
+`
 
 const inter = Inter({
   subsets: ["latin"],
@@ -48,8 +61,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html
       lang="en"
       className={`${inter.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable}`}
+      suppressHydrationWarning
     >
-      <body className="font-sans antialiased">{children}</body>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
+      <body className="font-sans antialiased" suppressHydrationWarning>
+        <ThemeProvider>{children}</ThemeProvider>
+      </body>
     </html>
   )
 }

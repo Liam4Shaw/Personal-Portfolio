@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react"
 import { cn } from "@/lib/utils"
 import { meta } from "@/lib/data"
+import { ThemeToggle } from "./theme-toggle"
 
 const links = [
   { label: "Work",       href: "#projects" },
@@ -58,27 +59,22 @@ export default function Nav() {
           {/* Wordmark */}
           <a
             href="#"
-            className={cn(
-              "font-display text-[17px] transition-colors leading-none",
-              active === "hero"
-                ? "text-accent"
-                : "text-ink hover:text-ink/80"
-            )}
+            className="font-display text-[17px] text-ink hover:text-ink/80 transition-colors leading-none"
             aria-label="Liam Shaw — home"
           >
             Liam Shaw
           </a>
 
           {/* Desktop nav */}
-          <nav className="hidden md:flex items-center gap-8" aria-label="Primary navigation">
+          <nav className="hidden md:flex items-center gap-7" aria-label="Primary navigation">
             {links.map(l => (
               <a
                 key={l.href}
                 href={l.href}
                 className={cn(
-                  "font-sans text-[13px] font-medium transition-colors relative",
+                  "font-mono text-[11.5px] tracking-wide uppercase transition-colors relative",
                   active === l.href.slice(1)
-                    ? "text-accent"
+                    ? "text-accent font-medium"
                     : "text-ink-3 hover:text-ink-2"
                 )}
               >
@@ -88,11 +84,11 @@ export default function Nav() {
           </nav>
 
           {/* Desktop right */}
-          <div className="hidden md:flex items-center gap-5">
+          <div className="hidden md:flex items-center gap-4">
             <a
               href={meta.resumeUrl}
               download
-              className="font-sans text-[12.5px] font-medium text-ink-3 hover:text-ink transition-colors flex items-center gap-1"
+              className="font-mono text-[11px] tracking-wide uppercase text-ink-3 hover:text-ink transition-colors flex items-center gap-1"
               aria-label="Download resume"
             >
               Resume
@@ -100,6 +96,7 @@ export default function Nav() {
                 <path d="M1.5 8.5L8.5 1.5M8.5 1.5H3M8.5 1.5V7" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
               </svg>
             </a>
+            <ThemeToggle />
             <a
               href="#contact"
               className="font-sans text-[12.5px] font-medium text-canvas bg-ink hover:bg-ink/90 px-3.5 py-1.5 rounded-sm transition-colors"
@@ -173,6 +170,9 @@ export default function Nav() {
             >
               Resume ↗
             </a>
+            <div className="flex items-center justify-center pt-2">
+              <ThemeToggle />
+            </div>
           </div>
         </div>
       </div>

@@ -2,7 +2,6 @@
 import { motion, useInView } from "framer-motion"
 import { useRef } from "react"
 import { cn } from "@/lib/utils"
-import type { Tag } from "@/lib/data"
 
 // ── FadeIn ────────────────────────────────────────────────────────────────────
 type FadeInProps = {
@@ -50,24 +49,36 @@ export function SectionHeader({ index, title }: { index: string; title: string }
 }
 
 // ── Tag pill ──────────────────────────────────────────────────────────────────
-const tagMap: Record<Tag, string> = {
-  "AI":               "bg-amber-500/8 text-amber-300/80 border-amber-500/15",
-  "NLP":              "bg-sky-500/8   text-sky-300/80   border-sky-500/15",
-  "ML":               "bg-teal-500/8  text-teal-300/80  border-teal-500/15",
-  "Analytics":        "bg-emerald-500/8 text-emerald-300/80 border-emerald-500/15",
-  "Generative AI":    "bg-violet-500/8 text-violet-300/80 border-violet-500/15",
-  "CRM":              "bg-orange-500/8 text-orange-300/80 border-orange-500/15",
-  "Full-Stack":       "bg-cyan-500/8   text-cyan-300/80   border-cyan-500/15",
-  "Research":         "bg-rose-500/8   text-rose-300/80   border-rose-500/15",
-  "Product Analytics":"bg-lime-500/8   text-lime-300/80   border-lime-500/15",
+// Refined semantic colour by category family — low-saturation, theme-aware, and
+// deliberately avoids amber (amber stays reserved for the primary CTA / status dot).
+// A small palette (5 hues) grouped by family keeps it "taxonomy," not "rainbow."
+// Anything not mapped falls back to neutral.
+const tagColorMap: Record<string, string> = {
+  // Modeling / intelligence family → violet
+  "AI":               "bg-violet-500/10 border-violet-500/20 text-violet-700 dark:text-violet-300/85",
+  "ML":               "bg-violet-500/10 border-violet-500/20 text-violet-700 dark:text-violet-300/85",
+  "Generative AI":    "bg-violet-500/10 border-violet-500/20 text-violet-700 dark:text-violet-300/85",
+  // Language → sky
+  "NLP":              "bg-sky-500/10 border-sky-500/20 text-sky-700 dark:text-sky-300/85",
+  // Research → rose
+  "Research":         "bg-rose-500/10 border-rose-500/20 text-rose-700 dark:text-rose-300/85",
+  // Product / engineering → cyan
+  "Full-Stack":       "bg-cyan-500/10 border-cyan-500/20 text-cyan-700 dark:text-cyan-300/85",
+  // Analytics → emerald
+  "Analytics":        "bg-emerald-500/10 border-emerald-500/20 text-emerald-700 dark:text-emerald-300/85",
+  "Product Analytics":"bg-emerald-500/10 border-emerald-500/20 text-emerald-700 dark:text-emerald-300/85",
+  // CRM → orange (distinct from the amber accent)
+  "CRM":              "bg-orange-500/10 border-orange-500/20 text-orange-700 dark:text-orange-300/85",
 }
 
-export function TagPill({ tag, sm }: { tag: Tag; sm?: boolean }) {
+const neutralTag = "bg-surface border-border text-ink-3"
+
+export function TagPill({ tag, sm }: { tag: string; sm?: boolean }) {
   return (
     <span className={cn(
       "inline-flex items-center font-mono border rounded-sm",
       sm ? "text-[9.5px] px-1.5 py-0.5" : "text-[10.5px] px-2 py-0.5",
-      tagMap[tag]
+      tagColorMap[tag] ?? neutralTag,
     )}>
       {tag}
     </span>

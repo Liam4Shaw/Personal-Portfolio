@@ -25,3 +25,9 @@ yarn-error.log*
 
 # Vercel
 .vercel
+
+# TypeScript
+*.tsbuildinfo
+
+# Claude Code — personal/local config, not shared
+.claude/settings.local.json

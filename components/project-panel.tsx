@@ -139,24 +139,26 @@ export default function ProjectPanel({
             </div>
 
             {/* Mobile horizontal section strip */}
-            <div className="lg:hidden flex-shrink-0 border-b border-border overflow-x-auto">
-              <nav className="flex px-5 gap-1 py-2" aria-label="Case study sections mobile">
-                {caseSections.map(({ key, label }) => (
-                  <button
-                    key={key}
-                    onClick={() => scrollToSection(key)}
-                    className={cn(
-                      "flex-shrink-0 font-mono text-[10px] px-3 py-1.5 rounded-sm transition-colors whitespace-nowrap",
-                      activeSection === key
-                        ? "text-accent bg-accent/8 border border-accent/20"
-                        : "text-ink-3 hover:text-ink-2 border border-transparent"
-                    )}
-                  >
-                    {label}
-                  </button>
-                ))}
-              </nav>
-            </div>
+            {!project.caseStudyPending && (
+              <div className="lg:hidden flex-shrink-0 border-b border-border overflow-x-auto">
+                <nav className="flex px-5 gap-1 py-2" aria-label="Case study sections mobile">
+                  {caseSections.map(({ key, label }) => (
+                    <button
+                      key={key}
+                      onClick={() => scrollToSection(key)}
+                      className={cn(
+                        "flex-shrink-0 font-mono text-[10px] px-3 py-1.5 rounded-sm transition-colors whitespace-nowrap",
+                        activeSection === key
+                          ? "text-ink bg-surface-2 border border-border-hi"
+                          : "text-ink-3 hover:text-ink-2 border border-transparent"
+                      )}
+                    >
+                      {label}
+                    </button>
+                  ))}
+                </nav>
+              </div>
+            )}
 
             {/* Two-column body */}
             <div className="flex flex-1 min-h-0 overflow-hidden">
@@ -224,26 +226,28 @@ export default function ProjectPanel({
                 </div>
 
                 {/* Section nav */}
-                <div>
-                  <p className="font-mono text-[9px] text-ink-3/60 tracking-widest uppercase mb-3">Jump to</p>
-                  <nav className="flex flex-col gap-0.5" aria-label="Case study sections">
-                    {caseSections.map(({ key, label, num }) => (
-                      <button
-                        key={key}
-                        onClick={() => scrollToSection(key)}
-                        className={cn(
-                          "flex items-center gap-2 text-left px-2 py-1.5 rounded-sm transition-colors text-[11.5px]",
-                          activeSection === key
-                            ? "text-accent bg-accent/6 border-l border-accent/40 -ml-px pl-[calc(0.5rem-1px)]"
-                            : "text-ink-3 hover:text-ink-2 hover:bg-surface/50"
-                        )}
-                      >
-                        <span className="font-mono text-[9px] text-ink-3/40 w-4">{num}</span>
-                        {label}
-                      </button>
-                    ))}
-                  </nav>
-                </div>
+                {!project.caseStudyPending && (
+                  <div>
+                    <p className="font-mono text-[9px] text-ink-3/60 tracking-widest uppercase mb-3">Jump to</p>
+                    <nav className="flex flex-col gap-0.5" aria-label="Case study sections">
+                      {caseSections.map(({ key, label, num }) => (
+                        <button
+                          key={key}
+                          onClick={() => scrollToSection(key)}
+                          className={cn(
+                            "flex items-center gap-2 text-left px-2 py-1.5 rounded-sm transition-colors text-[11.5px]",
+                            activeSection === key
+                              ? "text-ink bg-surface border-l border-border-hi -ml-px pl-[calc(0.5rem-1px)]"
+                              : "text-ink-3 hover:text-ink-2 hover:bg-surface/50"
+                          )}
+                        >
+                          <span className="font-mono text-[9px] text-ink-3/40 w-4">{num}</span>
+                          {label}
+                        </button>
+                      ))}
+                    </nav>
+                  </div>
+                )}
               </div>
 
               {/* Right — scrollable case study body */}
@@ -302,23 +306,27 @@ export default function ProjectPanel({
                     </div>
                   )}
 
-                  {/* Seven case study sections */}
-                  <div>
-                    {caseSections.map(({ key, label, num }) => (
-                      <div key={key} id={`cs-section-${key}`}>
-                        <CaseSection
-                          sectionKey={key}
-                          label={label}
-                          num={num}
-                          content={project.detail[key]}
-                          project={project}
-                        />
-                      </div>
-                    ))}
-                  </div>
+                  {/* Seven case study sections — or a pending notice for unpublished write-ups */}
+                  {project.caseStudyPending ? (
+                    <ScreenshotPlaceholder label="Full case study write-up" />
+                  ) : (
+                    <div>
+                      {caseSections.map(({ key, label, num }) => (
+                        <div key={key} id={`cs-section-${key}`}>
+                          <CaseSection
+                            sectionKey={key}
+                            label={label}
+                            num={num}
+                            content={project.detail[key]}
+                            project={project}
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  )}
 
                   {/* No-screenshot placeholder for projects without any screenshots */}
-                  {!project.screenshots && (
+                  {!project.screenshots && !project.caseStudyPending && (
                     <div className="mt-8 pt-8 border-t border-border">
                       <p className="font-mono text-[10px] text-ink-3/50 tracking-widest uppercase mb-4">
                         Visual artifacts

@@ -1,7 +1,8 @@
 "use client"
 import { motion } from "framer-motion"
 import Image from "next/image"
-import { meta } from "@/lib/data"
+import { useTheme } from "./theme-provider"
+import { cn } from "@/lib/utils"
 
 const f = (delay = 0) => ({
   initial:    { opacity: 0, y: 16 },
@@ -10,6 +11,8 @@ const f = (delay = 0) => ({
 })
 
 export default function Hero() {
+  const { theme } = useTheme()
+
   return (
     <section
       id="hero"
@@ -29,34 +32,27 @@ export default function Hero() {
 
           {/* Left — copy stack */}
           <div className="max-w-[640px]">
-            {/* Status indicator */}
-            <motion.div {...f(0.05)} className="mb-8 flex items-center gap-2">
-              <span className="inline-block w-1.5 h-1.5 rounded-full bg-green animate-pulse" />
-              <span className="font-mono text-[11px] text-ink-3 tracking-wide">
-                Available · May 2026
+            {/* Name kicker */}
+            <motion.div {...f(0.05)} className="mb-6">
+              <span className="font-mono text-[11px] text-ink-3 tracking-widest uppercase">
+                Liam Shaw
               </span>
             </motion.div>
 
-            {/* Name */}
-            <motion.div {...f(0.1)} className="mb-6">
-              <h1 className="font-display text-display-xl text-ink leading-none tracking-tightest">
-                Liam Shaw
+            {/* Headline */}
+            <motion.div {...f(0.1)} className="mb-7">
+              <h1 className="font-display text-display-lg text-ink leading-tight tracking-tight max-w-[600px]">
+                I build systems that turn messy data into clear decisions —
+                and ideas into shipped software.
               </h1>
             </motion.div>
 
-            {/* Core proposition — specific, grounded */}
+            {/* Subtitle */}
             <motion.div {...f(0.2)} className="mb-10">
-              <p className="text-[19px] md:text-[21px] text-ink/80 leading-relaxed font-light tracking-tight max-w-[520px]">
-                I build systems that help people{" "}
-                <span className="text-ink font-normal italic font-display">make better decisions.</span>
-              </p>
-              <p className="mt-4 text-[15px] text-ink-2 leading-relaxed max-w-[500px]">
-                Audio-to-emotion models, AI scouting platforms, engagement
-                analytics for universities — the common thread is turning
-                messy data into something a person can act on.
-              </p>
-              <p className="mt-5 font-mono text-[11px] text-ink-3 tracking-widest uppercase">
-                Applied AI · Analytics · Software
+              <p className="text-[15.5px] text-ink-2 leading-relaxed max-w-[520px]">
+                I help businesses automate the busywork, make sense of their
+                data, and stand up the tools they actually need — from
+                reporting pipelines and dashboards to full web applications.
               </p>
             </motion.div>
 
@@ -65,20 +61,19 @@ export default function Hero() {
               <a
                 href="#projects"
                 id="hero-cta-work"
-                className="inline-flex items-center gap-2 text-[13.5px] font-medium text-canvas bg-accent hover:bg-accent-dim px-5 py-2.5 rounded-sm transition-colors"
+                className="inline-flex items-center gap-2 text-[13.5px] font-medium text-on-accent bg-accent hover:bg-accent-dim px-5 py-2.5 rounded-sm transition-colors"
               >
-                View work
+                See my work
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
                   <path d="M2 6H10M10 6L7 3M10 6L7 9" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </a>
               <a
-                href={meta.resumeUrl}
-                download
-                id="hero-cta-resume"
+                href="#contact"
+                id="hero-cta-contact"
                 className="inline-flex items-center gap-2 text-[13.5px] font-medium text-ink-2 hover:text-ink border border-border hover:border-border-hi px-5 py-2.5 rounded-sm transition-all"
               >
-                Resume ↗
+                Get in touch
               </a>
             </motion.div>
           </div>
@@ -95,7 +90,10 @@ export default function Hero() {
                   src="/headshot.png"
                   alt="Liam Shaw"
                   fill
-                  className="object-cover object-top grayscale hover:grayscale-0 transition-all duration-700"
+                  className={cn(
+                    "object-cover object-top transition-all duration-700",
+                    theme === "dark" ? "grayscale hover:grayscale-0" : "grayscale-0 hover:grayscale"
+                  )}
                   sizes="240px"
                   priority
                 />

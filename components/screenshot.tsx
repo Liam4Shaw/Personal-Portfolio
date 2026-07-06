@@ -54,7 +54,7 @@ export function Screenshot({ src, alt, caption, className }: ScreenshotProps) {
         </div>
         {caption && (
           <figcaption className="mt-2.5 font-mono text-[10.5px] text-ink-3 leading-relaxed px-0.5 flex items-start gap-1.5">
-            <span className="text-accent/50 flex-shrink-0">↳</span>
+            <span className="text-ink-3 flex-shrink-0">↳</span>
             <span>{caption}</span>
           </figcaption>
         )}

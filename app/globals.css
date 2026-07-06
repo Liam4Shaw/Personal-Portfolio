@@ -9,6 +9,37 @@
   --font-instrument: "Instrument Serif", Georgia, serif;
   --font-inter: "Inter", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  /* ── Theme tokens — light (default) ──────────────────────────────────────── */
+  --color-canvas: #fbfaf8;
+  --color-canvas-2: #f2f0ec;
+  --color-canvas-3: #e9e6df;
+  --color-border: rgba(10, 9, 8, 0.10);
+  --color-border-hi: rgba(10, 9, 8, 0.18);
+  --color-surface: rgba(10, 9, 8, 0.035);
+  --color-surface-2: rgba(10, 9, 8, 0.06);
+  --color-ink: #16140f;
+  --color-ink-2: #57534b;
+  --color-ink-3: #8c8779;
+
+  /* Accent stays constant across themes — it's brand identity, not a neutral */
+  --color-accent: #e8a33d;
+  --color-accent-dim: #c9862b;
+  --color-on-accent: #1a1510;
+}
+
+/* ── Theme tokens — dark ──────────────────────────────────────────────────── */
+.dark {
+  --color-canvas: #0a0a0b;
+  --color-canvas-2: #111113;
+  --color-canvas-3: #18181b;
+  --color-border: rgba(255, 255, 255, 0.09);
+  --color-border-hi: rgba(255, 255, 255, 0.17);
+  --color-surface: rgba(255, 255, 255, 0.04);
+  --color-surface-2: rgba(255, 255, 255, 0.07);
+  --color-ink: #f0eeeb;
+  --color-ink-2: #9e9c99;
+  --color-ink-3: #56534f;
 }
 
 /* ── Base ─────────────────────────────────────────────────────────────────── */
@@ -19,12 +50,13 @@
   }
 
   body {
-    background: #0a0a0b;
-    color: #f0eeeb;
+    background: var(--color-canvas);
+    color: var(--color-ink);
     font-family: var(--font-inter), system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+    transition: background-color 0.25s ease, color 0.25s ease;
   }
 
   /* Instrument Serif ligatures */
@@ -43,24 +75,24 @@
 
 /* ── Selection ────────────────────────────────────────────────────────────── */
 ::selection {
-  background: rgba(232, 196, 104, 0.18);
-  color: #f0eeeb;
+  background: rgba(232, 163, 61, 0.22);
+  color: var(--color-ink);
 }
 
 /* ── Scrollbar ────────────────────────────────────────────────────────────── */
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.10);
+  background: var(--color-border-hi);
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(232, 196, 104, 0.32);
+  background: rgba(232, 163, 61, 0.4);
 }
 
 /* ── Focus ────────────────────────────────────────────────────────────────── */
 *:focus-visible {
-  outline: 1.5px solid rgba(232, 196, 104, 0.6);
+  outline: 1.5px solid rgba(232, 163, 61, 0.65);
   outline-offset: 3px;
   border-radius: 3px;
 }
@@ -74,7 +106,7 @@ body.panel-open { overflow: hidden; }
   .text-pretty  { text-wrap: pretty; }
 
   /* Hairline borders */
-  .border-hairline { border-color: rgba(255,255,255,0.09); }
+  .border-hairline { border-color: var(--color-border); }
 
   /* Prose rhythm */
   .prose-rhythm > * + * { margin-top: 1.4em; }
@@ -88,7 +120,7 @@ body.panel-open { overflow: hidden; }
 /* ── Horizontal rule style ────────────────────────────────────────────────── */
 hr {
   border: none;
-  border-top: 1px solid rgba(255,255,255,0.09);
+  border-top: 1px solid var(--color-border);
 }
 
 /* ── Image rendering ──────────────────────────────────────────────────────── */
@@ -124,5 +156,5 @@ img {
 
 /* ── Section separator refinement ─────────────────────────────────────────── */
 section + section {
-  border-top: 1px solid rgba(255,255,255,0.05);
+  border-top: 1px solid var(--color-border);
 }

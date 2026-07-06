@@ -1,5 +1,6 @@
 import Nav from "@/components/nav"
 import Hero from "@/components/hero"
+import CurrentlyStrip from "@/components/currently-strip"
 import Projects from "@/components/projects"
 import Experience from "@/components/experience"
 import About from "@/components/about"
@@ -10,8 +11,9 @@ export default function Home() {
     <main>
       <Nav />
       <Hero />
-      <Projects />
+      <CurrentlyStrip />
       <Experience />
+      <Projects />
       <About />
       <Contact />
     </main>

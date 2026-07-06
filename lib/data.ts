@@ -11,11 +11,6 @@ export const meta = {
   resumeUrl: "/Liam_Shaw_Resume.pdf",
 }
 
-export type Tag =
-  | "AI" | "NLP" | "ML" | "Analytics"
-  | "Generative AI" | "CRM" | "Full-Stack"
-  | "Research" | "Product Analytics"
-
 export interface Metric { value: string; label: string }
 
 export interface ProjectDetail {
@@ -40,7 +35,7 @@ export interface Project {
   summary: string
   role: string
   period: string
-  tags: Tag[]
+  tags: string[]
   metrics: Metric[]
   stack: string[]
   demoUrl?: string
@@ -49,6 +44,8 @@ export interface Project {
   /** Thumbnail shown in the project list row */
   listImage?: string
   screenshots?: ProjectScreenshots
+  /** True for projects whose full case-study write-up isn't published yet — the panel shows a "coming soon" notice instead of the 7-section breakdown */
+  caseStudyPending?: boolean
   detail: ProjectDetail
 }
 
@@ -197,7 +194,7 @@ export const projects: Project[] = [
     ],
     stack: ["RoBERTa", "PyTorch", "spaCy", "AMR Parsing", "Focal Loss", "FakeNewsNet"],
     githubUrl: "#",
-    featured: true,
+    featured: false,
     detail: {
       problem:
         "Fake news detection has a structural weakness: models trained on surface language patterns can be fooled by well-written misinformation. Transformers capture semantics but miss structural tells — passive voice obscuring agency, unusual named-entity distributions, fragmented causal chains. AMR graphs make these structural features explicit.",
@@ -220,7 +217,7 @@ export const projects: Project[] = [
     title: "Moodle Insight Dashboard",
     subtitle: "Client Work · FLAME Centre for Digital Learning",
     summary:
-      "Deployed analytics dashboard for FLAME University's Centre for Digital Learning. Replaced a manual Excel-based workflow — CSV export, manual scoring, spreadsheet flagging — with a seconds-to-insight web application tracking pre-orientation student engagement.",
+      "A delivered analytics dashboard turning raw usage data into decisions for FLAME University.",
     role: "Solo Developer — client engagement, product design, engineering",
     period: "2025",
     tags: ["Full-Stack", "Product Analytics"],
@@ -324,6 +321,20 @@ export interface Experience {
 }
 
 export const experiences: Experience[] = [
+  {
+    id: "kisah",
+    company: "Kisah",
+    role: "IT Consultant",
+    period: "May 2026 – Present",
+    location: "Kolkata · On-site",
+    type: "consulting",
+    bullets: [
+      "Built automated report-generation pipelines that replace manual data pulls across the team's e-commerce marketplace portals.",
+      "Developed a product-ranking analytics dashboard for menswear categories — a daily automated pipeline scrapes marketplace rankings and feeds Power BI for visualization.",
+      "Work spans competitive-intelligence dashboards, workflow automation, and turning raw market data into decision-ready reporting.",
+    ],
+    tags: ["Python", "Selenium", "Power BI", "DAX", "pandas", "Docker", "GitHub Actions"],
+  },
   {
     id: "aceplus",
     company: "ACEplus",
@@ -430,11 +441,4 @@ export const education: Education[] = [
     period: "2007 – 2022",
     highlights: ["ISC 2022 — 95%", "ICSE 2020 — 92.4%", "SAT — 1540 / 1600 (99th percentile)"],
   },
-]
-
-export interface Certification { name: string; issuer: string; year: string }
-export const certifications: Certification[] = [
-  { name: "CS50x: Introduction to Computer Science", issuer: "HarvardX · edX", year: "2021" },
-  { name: "Building AI Literacy", issuer: "LinkedIn Learning", year: "Mar 2025" },
-  { name: "Responsive Web Design", issuer: "freeCodeCamp", year: "2021" },
 ]

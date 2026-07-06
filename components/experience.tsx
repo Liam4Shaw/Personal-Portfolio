@@ -2,8 +2,9 @@
 import { FadeIn, SectionLabel } from "./ui"
 import { experiences } from "@/lib/data"
 
-// Key phrases to highlight in amber per experience entry
-const amberPhrases: Record<string, string[]> = {
+// Key phrases to emphasise per experience entry — weight/contrast carries the
+// hierarchy here, not colour (accent is reserved for the primary CTA + status dot).
+const emphasisPhrases: Record<string, string[]> = {
   aceplus: [
     "automated retention and re-engagement journeys/campaigns",
     "~2× more in-app ACEs",
@@ -18,6 +19,7 @@ const amberPhrases: Record<string, string[]> = {
   willwali: [
     "inaugural intern cohort",
     "30+ bugs",
+    "50+ unit and end-to-end tests at 90%+ coverage",
   ],
   "flame-sports": [
     "Derived comparative insights across clubs, time periods, and audience segments",
@@ -25,20 +27,8 @@ const amberPhrases: Record<string, string[]> = {
   ],
 }
 
-// Key phrases to bold per experience entry
-const boldPhrases: Record<string, string[]> = {
-  willwali: [
-    "50+ unit and end-to-end tests at 90%+ coverage",
-  ],
-}
-
 function highlightBullet(text: string, id: string): React.ReactNode {
-  const amber = amberPhrases[id] || []
-  const bold  = boldPhrases[id]  || []
-  const phrases = [
-    ...amber.map(p => ({ phrase: p, type: "amber" as const })),
-    ...bold.map(p  => ({ phrase: p, type: "bold"  as const })),
-  ]
+  const phrases = emphasisPhrases[id] || []
   if (phrases.length === 0) return text
 
   const parts: React.ReactNode[] = []
@@ -47,14 +37,12 @@ function highlightBullet(text: string, id: string): React.ReactNode {
   while (remaining.length > 0) {
     let earliestIndex = -1
     let earliestPhrase = ""
-    let earliestType: "amber" | "bold" = "amber"
 
-    for (const { phrase, type } of phrases) {
+    for (const phrase of phrases) {
       const idx = remaining.indexOf(phrase)
       if (idx !== -1 && (earliestIndex === -1 || idx < earliestIndex)) {
         earliestIndex = idx
         earliestPhrase = phrase
-        earliestType = type
       }
     }
 
@@ -66,19 +54,11 @@ function highlightBullet(text: string, id: string): React.ReactNode {
     if (earliestIndex > 0) {
       parts.push(remaining.slice(0, earliestIndex))
     }
-    if (earliestType === "amber") {
-      parts.push(
-        <span key={earliestIndex} className="text-accent font-medium">
-          {earliestPhrase}
-        </span>
-      )
-    } else {
-      parts.push(
-        <strong key={earliestIndex} className="text-ink-2 font-semibold">
-          {earliestPhrase}
-        </strong>
-      )
-    }
+    parts.push(
+      <strong key={earliestIndex} className="text-ink font-semibold">
+        {earliestPhrase}
+      </strong>
+    )
     remaining = remaining.slice(earliestIndex + earliestPhrase.length)
   }
 
@@ -104,7 +84,7 @@ export default function Experience() {
     <section id="experience" className="py-24 md:py-32 bg-canvas-2">
       <div className="max-w-content mx-auto px-6">
         <FadeIn className="mb-14">
-          <SectionLabel>02 / Experience</SectionLabel>
+          <SectionLabel>01 / Experience</SectionLabel>
           <h2 className="font-display text-display-lg text-ink leading-tight tracking-tight">
             Where I&apos;ve worked
           </h2>
@@ -125,7 +105,7 @@ export default function Experience() {
                       <h3 className="text-[15px] font-semibold text-ink leading-snug">
                         {exp.role}
                       </h3>
-                      <p className="text-[13px] text-accent font-medium mt-0.5">
+                      <p className="text-[13px] text-ink-2 font-medium mt-0.5">
                         {exp.company}
                         <span className="text-ink-3 font-normal"> · {exp.location}</span>
                       </p>
