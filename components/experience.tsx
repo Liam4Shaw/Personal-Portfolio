@@ -5,6 +5,11 @@ import { experiences } from "@/lib/data"
 // Key phrases to emphasise per experience entry — weight/contrast carries the
 // hierarchy here, not colour (accent is reserved for the primary CTA + status dot).
 const emphasisPhrases: Record<string, string[]> = {
+  kisah: [
+    "automated report-generation pipelines that replace manual data pulls",
+    "daily automated pipeline",
+    "decision-ready reporting",
+  ],
   aceplus: [
     "automated retention and re-engagement journeys/campaigns",
     "~2× more in-app ACEs",

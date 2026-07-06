@@ -5,8 +5,8 @@ import { meta } from "@/lib/data"
 import { ThemeToggle } from "./theme-toggle"
 
 const links = [
-  { label: "Work",       href: "#projects" },
   { label: "Experience", href: "#experience" },
+  { label: "Projects",   href: "#projects" },
   { label: "About",      href: "#about" },
   { label: "Contact",    href: "#contact" },
 ]
@@ -59,7 +59,10 @@ export default function Nav() {
           {/* Wordmark */}
           <a
             href="#"
-            className="font-display text-[17px] text-ink hover:text-ink/80 transition-colors leading-none"
+            className={cn(
+              "font-display text-[17px] transition-colors leading-none",
+              active === "hero" ? "text-accent" : "text-ink hover:text-ink/80"
+            )}
             aria-label="Liam Shaw — home"
           >
             Liam Shaw
